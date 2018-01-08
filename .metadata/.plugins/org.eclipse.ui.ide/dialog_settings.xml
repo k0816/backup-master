@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\拓\Desktop\backup-master\backup\workspace\ecsite"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\solare-master"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\solare"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\ecsite"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\計算"/>
+			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\template"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>

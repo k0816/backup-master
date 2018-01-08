@@ -1,0 +1,55 @@
+package 計算;
+
+public class TEST{
+
+private int id;
+private String name;
+private String password;
+/**
+ * idを取得します。
+ * @return id
+ */
+public int getId() {
+    return id;
+}
+/**
+ * idを設定します。
+ * @param id id
+ */
+public void setId(int id) {
+    this.id = id;
+}
+/**
+ * nameを取得します。
+ * @return name
+ */
+public String getName() {
+    return name;
+}
+/**
+ * nameを設定します。
+ * @param name name
+ */
+public void setName(String name) {
+    this.name = name;
+}
+/**
+ * passwordを取得します。
+ * @return password
+ */
+public String getPassword() {
+    return password;
+}
+/**
+ * passwordを設定します。
+ * @param password password
+ */
+public void setPassword(String password) {
+    this.password = password;
+}
+
+
+
+
+}
+

@@ -1,0 +1,18 @@
+package 計算;
+
+public class TEST{
+
+public static void main(String[] args){
+
+int[5]a;
+
+
+a[0]=20;
+
+a[1]=a[0];
+
+System.out.println(a[0]);
+
+}
+}
+

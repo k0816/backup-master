@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1514511178134" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1514511178134" name\="jre" path\="C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\eclipse\\jre"/>\r\n</vmType>\r\n</vmSettings>\r\n

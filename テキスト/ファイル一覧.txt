@@ -1,0 +1,61 @@
+jspファイル
+
+top
+-login
+-newUser 初めての方へ
+-userCreate 会員登録情報入力
+ --userCreateConfirm 登録情報確認
+  ---userCreateComplete 会員登録完了画面
+-eventSearch イベント検索情報入力
+ --eventResult　イベント検索結果表示
+  ---eventJoin イベント詳細表示、参加ボタン
+   ----eventJoinComplete 参加完了画面
+-question よくある質問
+-notice お知らせ
+-inquiry お問い合わせ
+-recruit 採用情報
+-myPage 登録情報＆参加イベント＆お気に入りイベント表示
+-logout ログアウト確認画面表示 OKでホーム、NOで前画面に戻る
+
+error.jsp DBにアクセス失敗時に表示
+
+--------------------------------------
+action javaファイル
+
+NewUserAction
+LoginAction
+LogoutAction
+MyPageAction
+GoHomeAction
+UserCreateAction
+UserCreateConfirmAction
+UserCreateCompleteAction
+EventSearchAction
+EventResultAction
+EventJoinAction
+EventJoinCompleteAction
+
+-------------------------------------
+dao javaファイル
+
+LoginDAO
+MyPageDAO
+EventResultDAO
+EventJoinDAO
+EventJoinCompleteDAO
+UserCreateCompleteDAO
+
+
+--------------------------------
+dto javaファイル
+
+LoginDTO
+EventResultDTO
+EventJoinDTO
+MyPageDTO
+
+--------------------------------
+util javaファイル
+
+DateUtil.java　日付取得メソッド
+DBConnector.java DB接続メソッド

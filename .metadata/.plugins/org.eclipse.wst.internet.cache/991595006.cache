@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>FREESPOT</title><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+<meta http-equiv="Pragma" content="no-cache">
+<script language="JavaScript" type="text/javascript">if(self != top){ top.location.href = self.location.href; }else{ setTimeout("document.forms[0].submit();",1); }</script></head>
+<body>
+<p>広告ページにジャンプします。自動的に広告が表示されない場合は "Go" ボタンをクリックしてください。</p><p>The advertisement page will open. If it does not open automatically, click [Go].</p><form action="http://struts.apache.org" method="get">
+<input type="submit" value=" Go ">
+<input type="hidden" name="JUMPPAGE" value="ADVERTISE"></form>
+</body>
+</html>

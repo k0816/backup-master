@@ -1,0 +1,17 @@
+package 計算;
+
+public class TEST;
+
+public static void main(String[] args){
+
+int[]a;
+
+a= new int[4];
+
+a[3]=10;
+
+System.out.println(a[3]);
+
+}
+}
+

@@ -1,0 +1,31 @@
+-—v‘f‚Ì‘‚«•û-
+
+‡@ int[] a;              //intŒ^‚Ì”z—ña‚ğéŒ¾
+   a = new int[5];       //intŒ^‚Ì—v‘f‚ğ5ŒÂŠm•Û([0][1][2][3][4]‚Ì” ) ’l‚Í0‚Æ•\¦‚³‚ê‚é
+‡A int[] a = new int[5];  
+‡B int[] a = new int[] { 10, 20, 30, 40, 50 }; //’l‚ğ’¼Ú‘ã“ü
+‡C int[] a = { 10, 20, 30, 40, 50 };           //‚±‚ê‚ªˆê”ÔŠy
+‡D int a[] = new int[5]; //•Ï”–¼‘¤‚ÉŠpŠ‡ŒÊver
+
+.toString();   //”š‚ğ•¶š—ñ‚É•ÏŠ·‚·‚éƒƒ\ƒbƒh
+
+-session‚ğg‚¤‚½‚ß‚Ì‘‚«•û-
+
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SessionSampleAction extends ActionSupport implements SessionAware {
+
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
+    }
+
+    private Map<String, Object> session;
+}
+
+
+@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;

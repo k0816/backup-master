@@ -1,0 +1,8 @@
+gitへのあげかた
+
+①cd Desktop\workspace\workspace-konishi\backup
+   de+tab    wo+tab    wo+tab
+②git add --all  →作業ファイルが自動的に選ばれる
+③git commit -m "今日の日付" →GitHubにいつの更新なのかコメントを残す
+④git push　→GitHubへ更新ファイルを送る
+⑤chromeから自分のGitHubのページへアクセスを行い、更新されているか確認
