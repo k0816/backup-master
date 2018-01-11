@@ -1,0 +1,61 @@
+package cycle.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.LoginDAO;
+import cycle.dto.LoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction extends ActionSupport implements SessionAware{
+
+	private String address;
+
+	private String password;
+
+	public Map<String, Object> session;
+
+	private LoginDAO loginDAO = new LoginDAO();
+
+	private LoginDTO loginDTO = new LoginDTO();
+
+	public String execute() {
+
+		String result = ERROR;
+
+		loginDTO = loginDAO.getLoginUserInfo(address, password);
+
+		session.put("loginUser", loginDTO);
+
+		// ログイン情報を比較
+		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
+			result = SUCCESS;
+
+			return result;
+		}
+
+		return result;
+	}
+
+	public String getUserAddress() {
+		return address;
+	}
+
+	public void setUserAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}

@@ -1,21 +1,21 @@
 jspファイル
 
-top
--login
--newUser 初めての方へ
+home.jsp(ログイン機能内蔵)
+-toNewUser 初めての方へ
 -userCreate 会員登録情報入力
  --userCreateConfirm 登録情報確認
   ---userCreateComplete 会員登録完了画面
--eventSearch イベント検索情報入力
- --eventResult　イベント検索結果表示
-  ---eventJoin イベント詳細表示、参加ボタン
-   ----eventJoinComplete 参加完了画面
+-partySearch パーティ検索情報入力
+ --partySearchResult　パーティ検索結果表示
+  ---partyJoin パーティ詳細表示、参加ボタン
+   ----partyJoinComplete 参加完了画面
 -question よくある質問
 -notice お知らせ
 -inquiry お問い合わせ
 -recruit 採用情報
 -myPage 登録情報＆参加イベント＆お気に入りイベント表示
 -logout ログアウト確認画面表示 OKでホーム、NOで前画面に戻る
+(-chat 掲示板)
 
 error.jsp DBにアクセス失敗時に表示
 
@@ -30,19 +30,19 @@ GoHomeAction
 UserCreateAction
 UserCreateConfirmAction
 UserCreateCompleteAction
-EventSearchAction
-EventResultAction
-EventJoinAction
-EventJoinCompleteAction
+PartySearchAction
+PartySearchResultAction
+PartyJoinAction
+PartyJoinCompleteAction
 
 -------------------------------------
 dao javaファイル
 
 LoginDAO
 MyPageDAO
-EventResultDAO
-EventJoinDAO
-EventJoinCompleteDAO
+PartySearchResultDAO
+PartyJoinDAO
+PartyJoinCompleteDAO
 UserCreateCompleteDAO
 
 
@@ -50,8 +50,8 @@ UserCreateCompleteDAO
 dto javaファイル
 
 LoginDTO
-EventResultDTO
-EventJoinDTO
+PartySearchResultDTO
+PartyJoinDTO
 MyPageDTO
 
 --------------------------------

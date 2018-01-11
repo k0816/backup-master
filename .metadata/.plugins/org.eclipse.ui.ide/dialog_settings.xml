@@ -5,6 +5,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\拓\Desktop\backup-master\ecsite"/>
+			<item value="C:\Users\拓\Desktop\backup-master\solare-master"/>
 			<item value="C:\Users\拓\Desktop\backup-master\backup\workspace\ecsite"/>
 			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\solare-master"/>
 			<item value="C:\Users\internousdev\Desktop\workspace\workspace-konishi\backup\backup\workspace\solare"/>

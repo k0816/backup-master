@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="header">
+		<img src="image\logotest.jpg" width="150" height="50">
+		<div id="pr">
+			<form action="UserCreateAction">
+				<input type="button" value="会員登録" />
+			</form>
+			<form action="PartySearchAction">
+				<input type="button" value="詳細検索" />
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

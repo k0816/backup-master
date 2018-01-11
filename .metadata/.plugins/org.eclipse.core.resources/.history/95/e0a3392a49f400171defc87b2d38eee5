@@ -1,0 +1,8 @@
+package cycle.action;
+
+public class UserCreateAction {
+
+	public String execute() {
+		return SUCCESS;
+	}
+}

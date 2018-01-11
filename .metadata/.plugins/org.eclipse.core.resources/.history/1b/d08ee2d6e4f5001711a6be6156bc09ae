@@ -1,0 +1,40 @@
+package cycle.dto;
+
+public class LoginDTO {
+
+	private String loginAddress;
+
+	private String loginPassword;
+
+	private String userName;
+
+    private String gender;
+
+	private String birthday;
+
+	private boolean loginFlg = false;
+
+	public String getLoginAddress() {
+		return loginAddress;
+	}
+
+	public void setLoginAddress(String address) {
+		this.address = address;
+	}
+
+	public String getLoginPassword() {
+		return password;
+	}
+
+	public void setLoginPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean getLoginFlg() {
+		return loginFlg;
+	}
+
+	public void setLoginFlg(boolean loginFlg) {
+		this.loginFlg = loginFlg;
+	}
+}

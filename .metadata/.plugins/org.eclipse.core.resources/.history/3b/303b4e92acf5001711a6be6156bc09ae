@@ -1,0 +1,15 @@
+package cycle.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.PartyJoinDAO;
+import cycle.dao.LoginDAO;
+import cycle.dto.PartyJoinDTO;
+import cycle.dto.LoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class LoginAction {
+
+}

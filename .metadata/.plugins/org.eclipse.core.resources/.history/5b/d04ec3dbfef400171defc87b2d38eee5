@@ -1,0 +1,123 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ヘッダー記述</title>
+
+<style type="text/css">
+#header {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	border-bottom: 3px solid black;
+	position: fixed;
+}
+
+.botan {
+	position: absolute;
+	top: 50px;
+}
+
+#home {
+	position: absolute;
+	left: 200px;
+}
+
+#new {
+	position: absolute;
+	left: 280px;
+}
+
+#search {
+	position: absolute;
+	left: 400px;
+}
+
+#other {
+	position: absolute;
+	left: 500px;
+}
+
+#create {
+	position: absolute;
+	left: 580px;
+}
+
+body {
+	background: url("./image/wood.jpg");
+}
+</style>
+
+</head>
+<body>
+
+	<div id="header">
+		<img src="image\logotest.jpg" width="150" height="50">
+
+		<div class="botan">
+
+			<div id="home">
+				<form action="GoHomeAction">
+					<input type="submit" value="ホーム" />
+				</form>
+			</div>
+			<div id="new">
+				<form action="ToNewUserAction">
+					<input type="submit" value="初めての方へ" />
+				</form>
+			</div>
+			<div id="search">
+				<form action="PartySearchAction">
+					<input type="submit" value="詳細検索" />
+				</form>
+			</div>
+
+			<!-- ドロップダウンメニュー -->
+			<div id="other">
+				<input type="submit" value="その他" />
+			</div>
+
+
+			<ul id="other" class="dropmenu">
+
+				<li><a href="#">その他</a>
+					<ul>
+
+						<li><a href="#">お知らせ</a></li>
+
+						<li><a href="#">お問い合わせ</a></li>
+						<li><a href="#">会社概要</a></li>
+					</ul>
+				</li>
+			</ul>
+
+
+
+
+
+
+
+
+
+			<!-- ログインの右に配置 -->
+			<div id="create">
+				<form action="UserCreateAction">
+					<input type="submit" value="会員登録" />
+				</form>
+			</div>
+
+
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+</body>
+</html>
