@@ -31,6 +31,6 @@ update_date datetime
 );
 
 INSERT INTO party_info_transaction(party_name, party_date, party_price, party_capacity, age_minimum, age_maximum)
-VALUES("クリスマスパーティー", 20181224, 5000, 50, 20, 30);
+VALUES("party", 20180401, 5000, 50, 20, 30);
 INSERT INTO login_user_transaction(login_address, login_pass, user_name, gender, birthday)
-VALUES("aug5ten2tzoo", "kokoko", "konishi", 1, 19910816);
+VALUES("aug", "kokoko", "konishi", 1, 19910816);

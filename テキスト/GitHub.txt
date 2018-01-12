@@ -1,9 +1,11 @@
+
 gitへのあげかた
 
 
 ①cd Desktop\workspace\workspace-konishi\backup
    de+tab    wo+tab    wo+tab
 
+  cd Desktop\backup-master
 ②git add --all  →作業ファイルが自動的に選ばれる
 
 ③git commit -m "今日の日付" →GitHubにいつの更新なのかコメントを残す

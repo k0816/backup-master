@@ -24,12 +24,16 @@
 <jsp:include page="/includeHeader.jsp" flush="true" />
 
 <br><br><br>
+
+<s:if test="#session.loginUser ==null">
 <s:form action="LoginAction">
 				<s:textfield name="loginAddress"/>
 				<s:password name="loginPassword"/>
+				<!-- <s:textfield name="userName"/> -->
+				<s:hidden name="userName" value='<s:property value="userName"/>'/>
 				<s:submit value="ログイン"/>
 			</s:form>
-
+</s:if>
 
 </body>
 </html>

@@ -1,10 +1,9 @@
 ---質問---
 
+会員登録に失敗しても成功画面が出てしまう
+→会員登録入力の時点で制限する？
 
-mysql関連
-・性別(gender)はboolean型？bit型？で登録？
-・年齢範囲は、age minimum から age maximum の二項目をintで設定？
-　それともbit型？boolean型？で整数の値を設定し、javaで値に対しての年齢範囲を設定？
+
 
 
 
@@ -37,24 +36,27 @@ MyPageAction
 
 ---解決---
 
+mysql関連
+・性別(gender)はboolean型？bit型？で登録？→smallint
+・年齢範囲は、age minimum から age maximum の二項目をintで設定？
+　それともbit型？boolean型？で整数の値を設定し、javaで値に対しての年齢範囲を設定？
+　→二項目をintでok
+
+
 mysqlに画像を保存した方がいいのか→今のところはいい。商品画像で使うかも。
 
+・session.clearで削除してる
 
 
-LogoutActionの仕組み
+・MyPageDAO-ArrayList-
 
-session.clearで削除してる
-
-
-MyPageDAO-ArrayList-
-
-DTOには要素数を一個しか入れられないが、ArrayListを使うと何回も分けて購入できる。
+　DTOには要素数を一個しか入れられないが、ArrayListを使うと何回も分けて購入できる。
 
 
-util
+・util
 共通して使われるメソッド機能を記しておく。
 
-各クラスからこれらを参照して使う。
+　各クラスからこれらを参照して使う。
 修正する場合、元ファイルを修正するだけで住む。
 
 

@@ -15,6 +15,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private String loginPassword;
 
+	private String userName;
+
 
 	public Map<String, Object> session;
 
@@ -62,6 +64,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public void setLoginPassword(String loginPassword) {
 		this.loginPassword = loginPassword;
+	}
+
+	public String getUserName() {
+	    return userName;
+	}
+
+	public void setUserName(String userName) {
+	    this.userName = userName;
 	}
 
 	@Override

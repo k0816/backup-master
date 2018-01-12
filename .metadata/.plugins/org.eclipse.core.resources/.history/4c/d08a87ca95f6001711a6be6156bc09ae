@@ -1,0 +1,152 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.UserCreateCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
+
+	private String loginAddress;
+
+	private String loginPassword;
+
+	private String userName;
+
+	private String gender;
+
+	private String birthday;
+
+	public Map<String, Object> session;
+
+	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		userCreateCompleteDAO.createUser(session.get("loginUserAddress").toString(),
+				session.get("loginPassword").toString(),
+				session.get("userName").toString(),
+				session.get("gender").toString(),
+				session.get("birthday").toString());
+
+		String result = SUCCESS;
+
+		return result;
+	}
+
+	/**
+	 * loginAddressを取得します。
+	 * @return loginAddress
+	 */
+	public String getLoginAddress() {
+	    return loginAddress;
+	}
+
+	/**
+	 * loginAddressを設定します。
+	 * @param loginAddress loginAddress
+	 */
+	public void setLoginAddress(String loginAddress) {
+	    this.loginAddress = loginAddress;
+	}
+
+	/**
+	 * loginPasswordを取得します。
+	 * @return loginPassword
+	 */
+	public String getLoginPassword() {
+	    return loginPassword;
+	}
+
+	/**
+	 * loginPasswordを設定します。
+	 * @param loginPassword loginPassword
+	 */
+	public void setLoginPassword(String loginPassword) {
+	    this.loginPassword = loginPassword;
+	}
+
+	/**
+	 * userNameを取得します。
+	 * @return userName
+	 */
+	public String getUserName() {
+	    return userName;
+	}
+
+	/**
+	 * userNameを設定します。
+	 * @param userName userName
+	 */
+	public void setUserName(String userName) {
+	    this.userName = userName;
+	}
+
+	/**
+	 * genderを取得します。
+	 * @return gender
+	 */
+	public String getGender() {
+	    return gender;
+	}
+
+	/**
+	 * genderを設定します。
+	 * @param gender gender
+	 */
+	public void setGender(String gender) {
+	    this.gender = gender;
+	}
+
+	/**
+	 * birthdayを取得します。
+	 * @return birthday
+	 */
+	public String getBirthday() {
+	    return birthday;
+	}
+
+	/**
+	 * birthdayを設定します。
+	 * @param birthday birthday
+	 */
+	public void setBirthday(String birthday) {
+	    this.birthday = birthday;
+	}
+
+	/**
+	 * sessionを取得します。
+	 * @return session
+	 */
+	public Map<String,Object> getSession() {
+	    return session;
+	}
+
+	/**
+	 * sessionを設定します。
+	 * @param session session
+	 */
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+
+	/**
+	 * userCreateCompleteDAOを取得します。
+	 * @return userCreateCompleteDAO
+	 */
+	public UserCreateCompleteDAO getUserCreateCompleteDAO() {
+	    return userCreateCompleteDAO;
+	}
+
+	/**
+	 * userCreateCompleteDAOを設定します。
+	 * @param userCreateCompleteDAO userCreateCompleteDAO
+	 */
+	public void setUserCreateCompleteDAO(UserCreateCompleteDAO userCreateCompleteDAO) {
+	    this.userCreateCompleteDAO = userCreateCompleteDAO;
+	}
+
+}

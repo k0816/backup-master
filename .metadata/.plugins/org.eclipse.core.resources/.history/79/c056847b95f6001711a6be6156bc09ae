@@ -1,0 +1,40 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.UserCreateCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
+
+	private String loginAddress;
+
+	private String loginPassword;
+
+	private String userName;
+
+	private String gender;
+
+	private String birthday;
+
+	public Map<String, Object> session;
+
+	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		userCreateCompleteDAO.createUser(session.get("loginUserAddress").toString(),
+				session.get("loginPassword").toString(),
+				session.get("userName").toString(),
+				session.get("gender").toString(),
+				session.get("birthday").toString());
+
+		String result = SUCCESS;
+
+		return result;
+	}
+
+}

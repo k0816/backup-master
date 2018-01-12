@@ -24,6 +24,12 @@
 	position: fixed;
 }
 
+#welcome {
+    position: absolute;
+	left: 200px;
+	top:20px;
+}
+
 .botan {
 	position: absolute;
 	top: 50px;
@@ -56,6 +62,8 @@
 
 body {
 	background: url("./image/wood.jpg");
+	margin: 0;
+	padding: 0;
 }
 
 /* ドロップダウンメニューについて */
@@ -157,6 +165,18 @@ body {
 	<div id="header">
 		<img src="image\logotest.jpg" width="150" height="80">
 
+		<div id="welcome">
+		<s:if test="#session.loginUser != null">
+		ようこそ！<s:property value="#session.loginUser.getUserName()" escape="false" />様！
+		</s:if>
+
+
+		<s:if test="#session.loginUser != null">
+
+        </s:if>
+		</div>
+
+
 		<div class="botan">
 
 			<div id="home">
@@ -188,8 +208,9 @@ body {
 						<li><a href="ToNewUserAction">お知らせ</a></li>
 						<li><a href="#">会社概要</a></li>
 						<li><a href="#">お問い合わせ</a></li>
-						<li><a href="#">submenu</a></li>
-					</ul></li>
+						<li><s:if test="#session.loginUser != null"><a href="LogoutAction">ログアウト</a></s:if></li>
+					</ul>
+				</li>
 			</ul>
 
 		</div>

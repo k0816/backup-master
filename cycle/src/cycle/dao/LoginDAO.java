@@ -15,14 +15,15 @@ public class LoginDAO {
 
 	private LoginDTO loginDTO = new LoginDTO();
 
-	public LoginDTO getLoginUserInfo(String loginAddress, String loginPassword) {
+	public LoginDTO getLoginUserInfo(String loginAddress, String loginPassword ) {
 
-		String sql = "SELECT * FROM login_user_transaction where login_address = ? AND login_pass = ?";
+		String sql = "SELECT * FROM login_user_transaction where login_address = ? AND login_pass = ? " ;
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginAddress);
 			preparedStatement.setString(2, loginPassword);
+
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
