@@ -16,7 +16,6 @@
 
 </style>
 
-
 </head>
 
 <body>
@@ -29,8 +28,8 @@
 <s:form action="LoginAction">
 				<s:textfield name="loginAddress"/>
 				<s:password name="loginPassword"/>
-				<!-- <s:textfield name="userName"/> -->
 				<s:hidden name="userName" value='<s:property value="userName"/>'/>
+				<s:hidden name="userId" value='<s:propety value="userId"/>'/>
 				<s:submit value="ログイン"/>
 			</s:form>
 </s:if>

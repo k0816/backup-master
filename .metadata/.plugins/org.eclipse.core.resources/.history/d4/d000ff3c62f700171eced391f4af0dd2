@@ -1,0 +1,21 @@
+package cycle.dto;
+
+public class PartySearchDTO {
+
+	public String partySearch;
+
+	public String partyDate;
+
+	public String partyPrice;
+
+	public String partyCapacity;
+
+	public String partyPlace;
+
+	public String ageMinimum;
+
+	public String ageMaximu;
+
+	public String partyDetail;
+
+}

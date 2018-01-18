@@ -1,0 +1,31 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.PartyJoinCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartyJoinCompleteAction extends ActionSupport implements SessionAware {
+
+	public Map<String, Object> session;
+
+	PartyJoinCompleteDAO partyJoinCompleteDAO = new PartyJoinCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		partyJoinCompleteDAO.joinParty(
+				session.get("user_id").toString(),
+				session.get("party_id").toString());
+
+		String result = SUCCESS;
+
+		return result;
+	}
+
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+}

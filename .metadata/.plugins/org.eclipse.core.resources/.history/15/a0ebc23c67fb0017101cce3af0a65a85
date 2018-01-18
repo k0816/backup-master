@@ -1,0 +1,54 @@
+package cycle.action;
+
+/* 参加ボタンを押すことにより、パーティーIDとユーザー情報が送られ、参加を確定するための画面*/
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.UserCreateCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartyJoinCompleteAction extends ActionSupport implements SessionAware {
+
+	private String partyId;
+
+	private String userId;
+
+	public Map<String, Object> session;
+
+	PartyJoinCompleteDAO partyJoinCompleteDAO = new PartyJoinCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		PartyJoinCompleteDAO.joinParty(
+				session.get("partyId").toString(),
+				session.get("userId").toString(),
+
+		String result = SUCCESS;
+
+		return result;
+	}
+
+
+	public String getPartyId() {
+		return partyId;
+	}
+
+	public void setPartyId(String partyId) {
+		this.partyId = partyId;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+}

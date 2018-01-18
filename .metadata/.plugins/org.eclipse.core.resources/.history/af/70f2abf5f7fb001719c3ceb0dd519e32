@@ -1,0 +1,36 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import cycle.util.DBConnector;
+import cycle.util.DateUtil;
+
+public class PartyJoinCompleteDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private DateUtil dateUtil = new DateUtil();
+
+
+	public void joinParty(String user_id, String party_id) throws SQLException {
+
+		private String sql = "INSERT INTO party_join_history (user_id, party_id, insert_date) VALUES(?, ?,)";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, user_id);
+			preparedStatement.setString(2, party_id);
+			preparedStatement.execute();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			connection.close();
+		}
+	}
+}

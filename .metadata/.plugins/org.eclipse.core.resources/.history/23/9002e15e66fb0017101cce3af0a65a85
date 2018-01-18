@@ -1,0 +1,7 @@
+package cycle.action;
+
+/* 参加ボタンを押すことにより、パーティーIDとユーザー情報が送られ、参加を確定するための画面*/
+
+public class PartyJoinCompleteAction {
+
+}

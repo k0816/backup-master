@@ -1,0 +1,48 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import cycle.dto.MyPageDTO;
+import cycle.util.DBConnector;
+
+public class MyPageDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+
+	public ArrayList<MyPageDTO> getMyPageUserInfo(String user_id, String party_id) throws SQLException {
+		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
+
+		String sql = "SELECT ubit.id, iit.party_name, ubit.party_price, ubit.party_date, ubit.insert_date FROM party_join_history ubit LEFT JOIN party_info iit ON ubit.party_id = iit.id where ubit.party_id  = ? AND ubit.user_id  = ? ORDER BY insert_date DESC";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, user_id);
+			preparedStatement.setString(2, party_id);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				MyPageDTO dto = new MyPageDTO();
+
+				dto.setUserId(resultSet.getString("user_id"));
+				dto.setPartyName(resultSet.getString("party_name"));
+				dto.setInsert_date(resultSet.getString("insert_date"));
+				myPageDTO.add(dto);
+			}
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			connection.close();
+		}
+
+		return myPageDTO;
+	}
+
+
+
+}

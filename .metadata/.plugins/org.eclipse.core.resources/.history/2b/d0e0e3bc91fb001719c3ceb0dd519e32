@@ -1,0 +1,5 @@
+package cycle.dto;
+
+public class MyPageDTO {
+
+}

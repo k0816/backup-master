@@ -1,5 +1,3 @@
 #Tomcat publish data
-#Thu Jan 11 18:40:02 GMT+09:00 2018
-org.eclipse.jst.jee.server\:solare-master=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\solare-master
-org.eclipse.jst.jee.server\:ecsite=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\ecsite
+#Thu Jan 18 17:29:42 GMT+09:00 2018
 org.eclipse.jst.jee.server\:cycle=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\cycle

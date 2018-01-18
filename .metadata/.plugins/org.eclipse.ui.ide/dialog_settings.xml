@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="401" key="DIALOG_X_ORIGIN"/>
+		<item value="132" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\拓\Desktop\backup-master\k-home-master"/>
+			<item value="C:\Users\拓\Desktop\backup-master\yataberyouhin-master"/>
 			<item value="C:\Users\拓\Desktop\backup-master\ecsite"/>
 			<item value="C:\Users\拓\Desktop\backup-master\solare-master"/>
 			<item value="C:\Users\拓\Desktop\backup-master\backup\workspace\ecsite"/>

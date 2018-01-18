@@ -1,0 +1,137 @@
+package cycle.dto;
+
+public class PartySearchDTO {
+
+	public String partySearch;
+
+	public String partyDate;
+
+	public String partyPrice;
+
+	public String partyCapacity;
+
+	public String partyPlace;
+
+	public String ageMinimum;
+
+	public String ageMaximu;
+
+	public String partyDetail;
+
+	/**
+	 * partySearchを取得します。
+	 * @return partySearch
+	 */
+	public String getPartySearch() {
+	    return partySearch;
+	}
+
+	/**
+	 * partySearchを設定します。
+	 * @param partySearch partySearch
+	 */
+	public void setPartySearch(String partySearch) {
+	    this.partySearch = partySearch;
+	}
+
+	/**
+	 * partyDateを取得します。
+	 * @return partyDate
+	 */
+	public String getPartyDate() {
+	    return partyDate;
+	}
+
+	/**
+	 * partyDateを設定します。
+	 * @param partyDate partyDate
+	 */
+	public void setPartyDate(String partyDate) {
+	    this.partyDate = partyDate;
+	}
+
+	/**
+	 * partyPriceを取得します。
+	 * @return partyPrice
+	 */
+	public String getPartyPrice() {
+	    return partyPrice;
+	}
+
+	/**
+	 * partyPriceを設定します。
+	 * @param partyPrice partyPrice
+	 */
+	public void setPartyPrice(String partyPrice) {
+	    this.partyPrice = partyPrice;
+	}
+
+	/**
+	 * partyCapacityを取得します。
+	 * @return partyCapacity
+	 */
+	public String getPartyCapacity() {
+	    return partyCapacity;
+	}
+
+	/**
+	 * partyCapacityを設定します。
+	 * @param partyCapacity partyCapacity
+	 */
+	public void setPartyCapacity(String partyCapacity) {
+	    this.partyCapacity = partyCapacity;
+	}
+
+	/**
+	 * partyPlaceを取得します。
+	 * @return partyPlace
+	 */
+	public String getPartyPlace() {
+	    return partyPlace;
+	}
+
+	/**
+	 * partyPlaceを設定します。
+	 * @param partyPlace partyPlace
+	 */
+	public void setPartyPlace(String partyPlace) {
+	    this.partyPlace = partyPlace;
+	}
+
+	/**
+	 * ageMinimumを取得します。
+	 * @return ageMinimum
+	 */
+	public String getAgeMinimum() {
+	    return ageMinimum;
+	}
+
+	/**
+	 * ageMinimumを設定します。
+	 * @param ageMinimum ageMinimum
+	 */
+	public void setAgeMinimum(String ageMinimum) {
+	    this.ageMinimum = ageMinimum;
+	}
+
+	/**
+	 * ageMaximuを取得します。
+	 * @return ageMaximu
+	 */
+	public String getAgeMaximum() {
+	    return ageMaximum;
+	}
+
+	public void setAgeMaximum(String ageMaximu) {
+	    this.ageMaximu = ageMaximu;
+	}
+
+	public String getPartyDetail() {
+	    return partyDetail;
+	}
+
+	public void setPartyDetail(String partyDetail) {
+	    this.partyDetail = partyDetail;
+	}
+
+}

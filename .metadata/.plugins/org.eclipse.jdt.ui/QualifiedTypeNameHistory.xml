@@ -5,4 +5,8 @@
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.internousdev.template.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="cycle.dto.PartySearchDTO"/>
+<fullyQualifiedTypeName name="cycle.dto.LoginDTO"/>
 </qualifiedTypeNameHistroy>

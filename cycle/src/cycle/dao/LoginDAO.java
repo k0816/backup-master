@@ -17,7 +17,7 @@ public class LoginDAO {
 
 	public LoginDTO getLoginUserInfo(String loginAddress, String loginPassword ) {
 
-		String sql = "SELECT * FROM login_user_transaction where login_address = ? AND login_pass = ? " ;
+		String sql = "SELECT * FROM user_info where login_address = ? AND login_pass = ? " ;
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -28,6 +28,7 @@ public class LoginDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()) {
+				loginDTO.setUserId(resultSet.getString("user_id"));
 				loginDTO.setLoginAddress(resultSet.getString("login_address"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));

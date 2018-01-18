@@ -1,0 +1,45 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import cycle.dto.PartySearchDTO;
+import cycle.util.DBConnector;
+
+public class PartySearchDAO {
+
+	 private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private PartySearchDTO partySearchDTO = new PartySearchDTO();
+
+	public PartySearchDTO getPartyInfo(){
+
+		String sql = "SELECT party_name, party_date, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail FROM party_info_transaction";
+
+	    try{
+	    	PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				partySearchDTO.setPartyName(resultSet.getInt("party_name"));
+				partySearchDTO.setPartyDate(resultSet.getString("party_date"));
+				partySearchDTO.setPartyPrice(resultSet.getString("party_price"));
+				partySearchDTO.setPartyCapacity(resultSet.getInt("party_capacity"));
+				partySearchDTO.setPartyPlace(resultSet.getString("party_place"));
+				partySearchDTO.setAgeMinimum(resultSet.getString("age_minimum"));
+				partySearchDTO.setAgeMaximum(resultSet.getString("age_maximum"));
+				partySearchDTO.setPartyDetail(resultSet.getString("party_detail"));
+
+
+	    }
+
+
+
+	}
+
+
+
+}

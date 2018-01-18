@@ -1,0 +1,25 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import cycle.dto.PartySearchDTO;
+import cycle.util.DBConnector;
+
+public class PartySearchDAO {
+
+	 private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private PartySearchDTO partySearchDTO = new PartySearchDTO();
+
+	public PartySearchDTO getPartyInfo(){
+
+		String sql = "SELECT party_name, party_date, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail,";
+	}
+
+
+
+}

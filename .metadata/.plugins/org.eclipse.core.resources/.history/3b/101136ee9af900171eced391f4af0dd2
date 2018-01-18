@@ -1,0 +1,57 @@
+package cycle.action;
+
+import java.util.ArrayList;
+
+import cycle.dao.PartySearchDAO;
+import cycle.dto.PartySearchDTO;
+import cycle.util.DBConnector;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartySearchAction extends ActionSupport implements SessionAware{
+
+	public Map<String, Object> session;
+
+
+	public ArrayList<PartySearchDTO> partySearchList = new ArrayList<PartySearchDTO>();
+
+	/*例
+	private ArrayList<ProductInfoDTO> doSelectAll() {
+		ProductInfoDAO productInfodao = new ProductInfoDAO();
+		productInfoDTOList = productInfodao.selectAll();
+		return productInfoDTOList;
+
+	*/
+
+	private ArrayList<PartySearchDTO> doSelectAll() {
+		private PartySearchDAO partySearchDAO = new PartySearchDAO();
+		partySearchDTOList = partySearchDAO.selectAll();
+		return partySearchDTOList;
+	}
+
+
+
+	public String execute() {
+	String result = SUCCESS;
+
+	return result;
+}
+
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public ArrayList<PartySearchDTO> getPartySearchList() {
+		return partySearchList;
+	}
+
+	public void setPartySearchList(ArrayList<PartySearchDTO> partySearchList) {
+		this.partySearchList = partySearchList;
+	}
+
+
+	}
+
+

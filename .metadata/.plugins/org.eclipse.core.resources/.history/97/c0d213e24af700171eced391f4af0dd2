@@ -1,0 +1,32 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.MyPageDAO;
+import cycle.dto.MyPageDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartySearchAction extends ActionSupport implements SessionAware{
+
+	private PartySearchDAO partySearchDAO = new partySearchDAO();
+
+	public ArrayList<PartySearchDTO> partysearchList = new ArrayList<PartySearchDTO>();
+
+	public String execute() {
+		return SUCCESS;
+	}
+
+
+
+
+
+
+
+
+}
+

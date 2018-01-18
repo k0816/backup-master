@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>パーティー詳細検索</title>
+<style type="text/css">
+
+
+.list {
+    border: 4px solid #82636b;
+    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+    margin: 2em 0;
+    padding: 2em;
+}
+
+. {
+
+}
+
+.partyDetail {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #95ccff;
+    border-radius: 8px;
+}
+.partyDetail .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #95ccff;
+    font-weight: bold;
+}
+.partyDetail p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+	<jsp:include page="/includeHeader.jsp" flush="true" />
+	<br>
+	<br>
+	<div id="main">
+		<h2 class="title">商品詳細</h2>
+		<br>
+
+		<!--商品詳細-->
+		<div class="box"></div>
+
+		<s:iterator value="partySearchDTOList">
+		<div class="list">
+			<div class="partyName">
+				<s:property value="partyName" />
+			</div>
+			<div class="partyDate">
+				開催日：<s:property value="partyDate" />
+			</div>
+			<div class="partyPrice">
+				参加費：<s:property value="partyPrice" />円
+			</div>
+			<div class="partyCapacity">
+				参加人数：<s:property value="partyCapacity" />人
+
+			</div>
+			<div class="age">
+			年齢制限：<s:property value="ageMinimum" />歳 ～ <s:property value="ageMaximum" /> 歳
+			</div>
+			<div></div>
+			<span class="box-title">説明文</span>
+			<s:property value="partyDetail" />
+
+    <p>ここに文章</p>
+
+			</div>
+		</div><br>
+		</s:iterator>
+	</div>
+	<br>
+	<br>
+
+</body>
+</html>

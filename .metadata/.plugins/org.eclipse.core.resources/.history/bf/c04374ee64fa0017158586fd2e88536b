@@ -1,0 +1,30 @@
+package cycle.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartyJoinAction extends ActionSupport{
+
+	private Map<String, Object> session;
+
+	private String partyName;
+
+	public String execute() {
+		return SUCCESS;
+	}
+
+	public String getPartyName() {
+		return partyName;
+	}
+
+	public void setPartyName(String partyName) {
+		this.partyName = partyName;
+	}
+
+
+}
+
+

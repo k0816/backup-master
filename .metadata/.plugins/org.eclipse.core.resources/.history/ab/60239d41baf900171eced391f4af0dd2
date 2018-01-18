@@ -1,0 +1,38 @@
+drop database if exists cycle;
+
+create database if not exists cycle;
+use cycle;
+
+drop table if exists login_user_transaction;
+
+create table login_user_transaction(
+id int not null primary key auto_increment,
+login_address varchar(50) unique,
+login_pass varchar(16),
+user_name varchar(50),
+gender smallint,
+birthday date,
+insert_date datetime,
+updated_date datetime
+);
+
+drop table if exists party_info_transaction;
+
+create table party_info_transaction(
+id int not null primary key auto_increment,
+party_name nvarchar(50),
+party_date int,
+party_price int,
+party_capacity int,
+party_place nvarchar(100),
+age_minimum int,
+age_maximum int,
+party_detail nvarchar(500),
+insert_date datetime,
+update_date datetime
+);
+
+INSERT INTO party_info_transaction(party_name, party_date, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail)
+VALUES("パーティー", 20180401, 5000, 50, "東京都新宿区西新宿２丁目１－１", 20, 30, "楽しいパーティーです");
+INSERT INTO login_user_transaction(login_address, login_pass, user_name, gender, birthday)
+VALUES("aug", "kokoko", "konishi", 1, 19910816);

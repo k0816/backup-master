@@ -14,19 +14,61 @@
 <title>パーティー詳細検索</title>
 <style type="text/css">
 
-</style>
 
+.list {
+    border: 4px solid #82636b;
+    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+    margin: 2em 0;
+    padding: 2em;
+}
+
+
+</style>
 </head>
 
 <body>
 
-<jsp:include page="/includeHeader.jsp" flush="true" />
+	<jsp:include page="/includeHeader.jsp" flush="true" />
+	<br>
+	<div id="main">
+
+		<h2 class="title">商品詳細</h2>
+		<!--商品詳細-->
+
+		<div class="box"></div>
+		<s:iterator value="partySearchDTOList">
+		<div class="list">
+			<div class="partyName">
+				<s:property value="partyName" />
+			</div>
+			<div class="partyDate">
+				開催日：<s:property value="partyDate" />
+			</div>
+			<div class="partyPrice">
+				参加費：<s:property value="partyPrice" />円
+			</div>
+			<div class="partyCapacity">
+				参加人数：<s:property value="partyCapacity" />人
+
+			</div>
+			<div class="age">
+			年齢制限：<s:property value="ageMinimum" />歳 ～ <s:property value="ageMaximum" /> 歳
+			</div>
+			<div></div>
+			<div class="partyDetail">
+			<s:property value="partyDetail" />
+			</div>
+			 <a href='<s:url action="PartyDetailAction"><s:param name="partyId" value="%{partyId}"/></s:url>'>
+            <input type="submit" value="詳しく見る" />
+            </a>
+		</div>
+
+		</s:iterator>
+	</div>
+
+
 	<br>
 	<br>
-	<h1>パーティー詳細検索画面</h1>
-	<br>
-	<br>
-	<br>
-	<br>
+
 </body>
 </html>

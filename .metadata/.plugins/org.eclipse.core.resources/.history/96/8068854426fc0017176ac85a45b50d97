@@ -1,0 +1,9 @@
+package cycle.dto;
+
+public class PartyJoinCompleteDTO {
+
+	public String userId;
+
+	public String partyid;
+
+}

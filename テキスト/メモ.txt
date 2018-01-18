@@ -1,0 +1,15 @@
+cd C:\xampp\mysql\bin
+mysql -u root -p
+mysql
+use cycle;
+show tables;
+select * from party_info_transaction;
+テーブル名;
+
+
+---ログイン中に表示させる---
+<s:if test="#session.loginUser != null">
+	処理内容			
+</s:if>
+
+onclick="MoveCheck(logout);"

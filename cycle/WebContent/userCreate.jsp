@@ -62,8 +62,8 @@ table {
 					</tr>
 					<tr>
 						<td><label>性別:</label></td>
-						<td><label><input type="radio" name="gender" value="男性" checked >男性</label>
-						<label><input type="radio" name="gender" value="女性" >女性</label></td>
+						<td><label><input type="radio" name="gender" value="1" checked >男性</label>
+						<label><input type="radio" name="gender" value="2" >女性</label></td>
 					</tr>
 					<tr>
 						<td><label>生年月日:</label></td>

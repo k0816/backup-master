@@ -1,0 +1,16 @@
+package cycle.dto;
+
+public class MyPageDTO {
+
+	public String partyName;
+
+	public String partyPrice;
+
+	public String partyDate;
+
+	public String insert_date;
+
+
+
+
+}

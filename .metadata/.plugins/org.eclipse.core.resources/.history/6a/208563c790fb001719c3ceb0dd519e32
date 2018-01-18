@@ -1,0 +1,39 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.MyPageDAO;
+import cycle.dto.MyPageDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MyPageAction extends ActionSupport implements SessionAware{
+
+	private MyPageDAO myPageDAO = new MyPageDAO();
+
+	public ArrayList<MyPageDTO> joinPartyList = new ArrayList<MyPageDTO>();
+
+	public String execute() throws SQLException {
+
+		/* 左がjoin_party_info、右がuser_infoとpaty_info */
+		String user_id = session.get("user_id").toString();
+		String party_id = session.get("party_id").toString();
+
+		joinPartyList = myPageDAO.getMyPageUserInfo(user_id, party_id);
+
+		String result = SUCCESS;
+		return result;
+
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+
+}

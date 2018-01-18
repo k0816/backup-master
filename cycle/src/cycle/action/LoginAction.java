@@ -15,19 +15,15 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private String loginPassword;
 
+	private String userId;
+
 	private String userName;
 
 
 	public Map<String, Object> session;
 
-	/**
-	 * ログイン情報取得DAO
-	 */
 	private LoginDAO loginDAO = new LoginDAO();
 
-	/**
-	 * ログイン情報格納IDTO
-	 */
 	private LoginDTO loginDTO = new LoginDTO();
 
 	public String execute() {
@@ -43,7 +39,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
 
-
+			session.put("loginUser", loginDTO);
 
 		}
 
@@ -64,6 +60,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	public void setLoginPassword(String loginPassword) {
 		this.loginPassword = loginPassword;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getUserName() {

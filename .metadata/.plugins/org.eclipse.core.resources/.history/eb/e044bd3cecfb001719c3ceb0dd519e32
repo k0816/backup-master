@@ -1,0 +1,14 @@
+package cycle.dto;
+
+public class MyPageDTO {
+
+	public String userId;
+
+	public String partyId;
+
+	public String insert_date;
+
+
+
+
+}

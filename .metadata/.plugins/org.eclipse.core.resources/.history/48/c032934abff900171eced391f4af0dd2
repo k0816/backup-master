@@ -1,0 +1,49 @@
+drop database if exists cycle;
+
+create database if not exists cycle;
+use cycle;
+
+drop table if exists login_user_transaction;
+
+create table login_user_transaction(
+id int not null primary key auto_increment,
+login_address varchar(50) unique,
+login_pass varchar(16),
+user_name varchar(50),
+gender smallint,
+birthday date,
+insert_date datetime,
+updated_date datetime
+);
+
+drop table if exists party_info_transaction;
+
+create table party_info_transaction(
+id int not null primary key auto_increment,
+party_name nvarchar(50),
+party_date int,
+party_price int,
+party_capacity int,
+party_place nvarchar(100),
+age_minimum int,
+age_maximum int,
+party_detail nvarchar(500),
+insert_date datetime,
+update_date datetime
+);
+
+INSERT INTO party_info_transaction(party_name, party_date, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail)
+VALUES("パーティー", 20180401, 5000, 50, "東京都新宿区", 20, 30, "コメント"),
+VALUES("飲み会", 20180701, 3000, 30, "東京都豊島区", 20, 40, "コメント"),
+VALUES("忘年会", 201801228, 4000, 30, "東京都品川区", 20, 40, "コメント"),
+VALUES("クリスマスパーティー", 20181224, 6000, 30, "埼玉県川越市", 20, 40, "コメント"),
+VALUES("お花見", 20180401, 3000, 30, "埼玉県さいたま市", 20, 40, "コメント"),
+VALUES("婚活パーティー", 20180701, 5000, 30, "神奈川県横浜市", 20, 40, "コメント"),
+VALUES("学生限定コンパ", 20180701, 4000, 30, "神奈川県川崎市", 20, 40, "コメント"),
+VALUES("ビアガーデン", 20180801, 4000, 30, "東京都新宿区西新宿", 20, 40, "コメント"),
+VALUES("BBQ", 20180701, 4000, 30, "東京都新宿区西新宿", 20, 40, "コメント"),
+VALUES("合コン", 20180901, 4000, 30, "東京都新宿区西新宿", 20, 40, "コメント"),
+VALUES("食事会", 201801001, 2500, 30, "東京都新宿区西新宿", 20, 40, "コメント"),
+VALUES("交流会", 20180201, 4000, 30, "東京都新宿区西新宿", 20, 40, "コメント");
+INSERT INTO login_user_transaction(login_address, login_pass, user_name, gender, birthday)
+VALUES("aug", "kokoko", "konishi", 1, 19910816);

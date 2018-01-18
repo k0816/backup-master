@@ -4,17 +4,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-
-
 <title>ヘッダー記述</title>
-
 <style type="text/css">
 #header {
 	width: 100%;
@@ -25,9 +21,9 @@
 }
 
 #welcome {
-    position: absolute;
+	position: absolute;
 	left: 200px;
-	top:20px;
+	top: 20px;
 }
 
 .botan {
@@ -50,14 +46,14 @@
 	left: 400px;
 }
 
-#other {
-	position: absolute;
-	left: 500px;
-}
-
-#create {
+#createORmypage {
 	position: absolute;
 	left: 505px;
+}
+
+#other {
+	position: absolute;
+	left: 650px;
 }
 
 body {
@@ -65,7 +61,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 /* ドロップダウンメニューについて */
 #dropmenu {
 	list-style-type: none;
@@ -73,11 +68,9 @@ body {
 	height: 20px;
 	margin: 0px auto 0px;
 	padding: 0;
-	background: #8a9b0f;
-	border-bottom: 5px solid #535d09;
-	border-radius: 3px 3px 0 0;
-	position: absolute;
-	left: 600px;
+	background: #bfbfbf;
+	border-bottom: 5px solid #7f7f7f;
+	border-radius: 3px 3px 0 0;;
 }
 
 #dropmenu li {
@@ -92,8 +85,8 @@ body {
 #dropmenu li a {
 	display: block;
 	margin: 0;
-	padding: 10px ;
-	color: #fff;
+	padding: 10px;
+	color: black;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 1;
@@ -101,7 +94,7 @@ body {
 }
 
 #dropmenu li:hover>a {
-	background: #6e7c0c;
+	background: #bfbfbf;;
 	color: #eff7b1;
 }
 
@@ -133,7 +126,7 @@ body {
 
 #dropmenu li ul li a {
 	padding: 13px 13px;
-	background: #6e7c0c;
+	background: #bfbfbf;
 	text-align: center;
 	font-size: 12px;
 	font-weight: normal;
@@ -142,7 +135,7 @@ body {
 #dropmenu li:hover ul li {
 	overflow: visible;
 	height: 38px;
-	border-top: 1px solid #7c8c0e;
+	border-top: 1px solid #bfbfbf;
 	border-bottom: 1px solid #616d0b;
 }
 
@@ -158,27 +151,18 @@ body {
 	border-radius: 0 0 3px 3px;
 }
 </style>
-
 </head>
 <body>
-
 	<div id="header">
 		<img src="image\logotest.jpg" width="150" height="80">
-
 		<div id="welcome">
-		<s:if test="#session.loginUser != null">
-		ようこそ！<s:property value="#session.loginUser.getUserName()" escape="false" />様！
-		</s:if>
-
-
-		<s:if test="#session.loginUser != null">
-
-        </s:if>
+			<s:if test="#session.loginUser != null">
+ようこそ！<s:property value="#session.loginUser.getUserName()" escape="false" />様！
+</s:if>
+			<s:if test="#session.loginUser != null">
+			</s:if>
 		</div>
-
-
-		<div class="botan">
-
+	<div class="botan">
 			<div id="home">
 				<form action="GoHomeAction">
 					<input type="submit" value="ホーム" />
@@ -194,32 +178,45 @@ body {
 					<input type="submit" value="詳細検索" />
 				</form>
 			</div>
-
-			<div id="create">
+			<div id=createORmypage>
+			<s:if test="#session.loginUser !=null">
+				<ul id="dropmenu">
+					<li><a href="#">マイページ</a>
+						<ul>
+							<li><a href="FavoriteListAction">お気に入り</a></li>
+							<li><a href="JoinHistoryAction">参加履歴</a></li>
+							<li><a href="YourInfoAction">登録情報確認</a></li>
+						</ul>
+					</li>
+				</ul>
+			</s:if>
+			<s:else>
 				<form action="UserCreateAction">
 					<input type="submit" value="会員登録" />
 				</form>
+			</s:else>
 			</div>
-			<!-- ドロップダウンメニュー -->
 
-			<ul id="dropmenu">
-				<li><a href="#">その他</a>
-					<ul>
-						<li><a href="ToNewUserAction">お知らせ</a></li>
-						<li><a href="#">会社概要</a></li>
-						<li><a href="#">お問い合わせ</a></li>
-						<li><s:if test="#session.loginUser != null"><a href="LogoutAction">ログアウト</a></s:if></li>
-					</ul>
-				</li>
-			</ul>
-
+		<!-- ドロップダウンメニュー -->
+		<div id="other">
+		<ul id="dropmenu">
+			<li><a href="#">その他</a>
+				<ul>
+					<li><a href="ToNewUserAction">お知らせ</a></li>
+					<li><a href="#">会社概要</a></li>
+					<li><a href="#">お問い合わせ</a></li>
+					<li><s:if test="#session.loginUser != null">
+							<a href="LogoutAction">ログアウト</a>
+						</s:if></li>
+				</ul>
+			</li>
+		</ul>
 		</div>
+	</div>
 	</div>
 	<br>
 	<br>
 	<br>
 	<br>
-
-
 </body>
 </html>
