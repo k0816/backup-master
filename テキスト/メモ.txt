@@ -3,7 +3,7 @@ mysql -u root -p
 mysql
 use cycle;
 show tables;
-select * from party_info_transaction;
+select * from party_info;
 ƒe[ƒuƒ‹–¼;
 
 

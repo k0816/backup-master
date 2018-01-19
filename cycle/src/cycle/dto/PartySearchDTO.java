@@ -10,7 +10,7 @@ public class PartySearchDTO {
 
 	public String partyName;
 
-	public String partyDate;
+	public Date partyDate;
 
 	public String partyPrice;
 
@@ -62,11 +62,11 @@ public class PartySearchDTO {
 	    this.partyName = partyName;
 	}
 
-	public String getPartyDate() {
+	public Date getPartyDate() {
 	    return partyDate;
 	}
 
-	public void setPartyDate(String partyDate) {
+	public void setPartyDate(Date partyDate) {
 	    this.partyDate = partyDate;
 	}
 

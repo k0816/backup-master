@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<jsp:include page="/include.jsp" flush="true" />
+
 <h1>参加登録完了です</h1>
 </body>
 </html>

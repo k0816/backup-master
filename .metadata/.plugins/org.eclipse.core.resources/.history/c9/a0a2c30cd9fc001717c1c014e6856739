@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>履歴</title>
+</head>
+<body>
+<jsp:include page="/includeHeader.jsp" flush="true" />
+<br><br>
+
+<s:iterator value="partyJoinHistoryListDTO">
+
+
+					<div>商品名：<s:property value="partyName" /></div>
+					<div>開催日：s:property value="partyDate" /></div>
+					<div>値段：<s:property value="partyPrice" />円</div>
+					<div>受付日：<s:property value="insertDate" /></div>
+					<br>
+				</s:iterator>
+
+
+</body>
+</html>

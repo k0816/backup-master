@@ -20,7 +20,7 @@ function MoveCheck() {
 <title>詳細情報</title>
 </head>
 <body>
-<jsp:include page="/includeHeader.jsp" flush="true" />
+<jsp:include page="/include.jsp" flush="true" />
 <br><br>
 
 <s:property value="partyId" />

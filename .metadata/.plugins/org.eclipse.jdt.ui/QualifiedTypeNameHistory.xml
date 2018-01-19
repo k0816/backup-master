@@ -9,4 +9,5 @@
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="cycle.dto.PartySearchDTO"/>
 <fullyQualifiedTypeName name="cycle.dto.LoginDTO"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
 </qualifiedTypeNameHistroy>

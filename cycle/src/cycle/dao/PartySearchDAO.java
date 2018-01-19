@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import cycle.dto.PartySearchDTO;
@@ -30,16 +27,7 @@ public class PartySearchDAO {
 				PartySearchDTO partySearchDTO = new PartySearchDTO();
 				partySearchDTO.setPartyId(rs.getString("party_id"));
 				partySearchDTO.setPartyName(rs.getString("party_name"));
-				String d=rs.getString("party_name");
-				DateFormat df1 = new SimpleDateFormat("yyyy年MM月dd日");
-
-				try {
-					String partyDate = df1.format(df1.parse(d));
-					partySearchDTO.setPartyName(partyDate);
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
-				partySearchDTO.setPartyDate(rs.getString("party_date"));
+				partySearchDTO.setPartyDate(rs.getDate("party_date"));
 				partySearchDTO.setPartyPrice(rs.getString("party_price"));
 				partySearchDTO.setPartyCapacity(rs.getString("party_capacity"));
 				partySearchDTO.setPartyPlace(rs.getString("party_place"));

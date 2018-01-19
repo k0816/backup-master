@@ -21,7 +21,7 @@ drop table if exists party_info_transaction;
 create table party_info(
 party_id int not null primary key auto_increment,
 party_name nvarchar(50),
-party_date int,
+party_date date,
 party_price int,
 party_capacity int,
 party_place nvarchar(100),
@@ -43,6 +43,6 @@ update_date datetime
 );
 
 INSERT INTO user_info(login_address, login_pass, user_name, gender, birthday)
-VALUES("aug", "kokoko", "konishi", 1, 19910816);
+VALUES("aug", "koni", "konishi", 1, 19910816);
 INSERT INTO party_join_history(user_id, party_id)
 VALUES("1", "1");

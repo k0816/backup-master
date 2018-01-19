@@ -1,0 +1,32 @@
+package cycle.action;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.PartyJoinHistoryDAO;
+import cycle.dto.PartyJoinHistoryDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PartyJoinHistoryAction extends ActionSupport {
+
+	ArrayList<PartyJoinHistoryDTO> partyJoinHistoryListDTO = new ArrayList<PartyJoinHistoryDTO>();
+
+	public String execute(){
+		PartyJoinHistoryDAO partyJoinHitoryDAO = new PartyJoinHistoryDAO();
+		partyJoinHistoryListDTO = partyJoinHitoryDAO.select()
+		String result = SUCCESS;
+
+		return  result;
+	}
+
+	public ArrayList<PartyJoinHistoryDTO> getPartyJoinHistoryListDTO() {
+		return partyJoinHistoryListDTO;
+	}
+
+	public void setPartyJoinHistoryListDTO(ArrayList<PartyJoinHitoryDTO> partyJoinHistoryListDTO) {
+		this.partyJoinHistoryListDTO = partyJoinHistoryListDTO;
+	}
+
+}

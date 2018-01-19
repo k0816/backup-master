@@ -5,7 +5,7 @@ drop table if exists party_info;
 create table party_info(
 party_id int not null primary key auto_increment,
 party_name nvarchar(50),
-party_date int,
+party_date date,
 party_price int,
 party_capacity int,
 party_place nvarchar(100),
