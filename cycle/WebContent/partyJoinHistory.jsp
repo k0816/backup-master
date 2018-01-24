@@ -43,6 +43,8 @@
 				受付日：
 				<s:date name="insertDate" format="yyyy年MM月dd日" />
 			</div>
+			<a href='<s:url action="PartyDetailAction"><s:param name="partyId" value="%{partyId}"/></s:url>'>
+            <input type="submit" value="詳しく見る" /></a>
 			<br>
 		</div>
 	</s:iterator>

@@ -1,0 +1,45 @@
+package cycle.action;
+
+import cycle.dao.UserInfoDAO;
+
+import java.util.Date;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class  UserInfoAction extends ActionSupport  {
+
+	public UserInfoDAO userInfoDAO = new UserInfoDAO();
+
+
+	String userId;
+
+	String loginAddress;
+
+	String loginPassword;
+
+	String userName;
+
+    String gender;
+
+	Date birthday;
+
+
+	public String execute()  {
+
+
+		return SUCCESS;
+	}
+
+
+	public UserInfoDAO getUserInfoDAO() {
+		return userInfoDAO;
+	}
+
+	public void setUserInfoDAO(UserInfoDAO userInfoDAO) {
+		this.userInfoDAO = userInfoDAO;
+	}
+
+
+
+
+}

@@ -1,0 +1,47 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import cycle.dto.PartyJoinHistoryDTO;
+import cycle.util.DBConnector;
+
+public class UserInfoDAO extends  SessionAware{
+	  DBConnector db= new DBConnector();
+	  Connection con = db.getConnection();
+	  public Map<String,Object>session;
+
+	  /* MYSQLの商品履歴に商品情報を加えている */
+	  String sql = "SELECT * FROM user_info WHERE user_id = ? ";
+
+			PreparedStatement ps=con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ResultSet rs=ps.executeQuery();
+
+				String userName = rs.getString("user_name");
+			/*	session.putLoginAddress(rs.getString("login_address")),
+				session.putLoginPass(rs.getString("party_id")),
+				session.putPartyId(rs.getString("party_id")),
+				session.putPartyId(rs.getString("party_id"));
+*/
+
+
+
+		public Map<String, Object> getSession() {
+			return session;
+		}
+		public void setSession(Map<String, Object> session) {
+			this.session = session;
+		}
+
+	}
+
+}

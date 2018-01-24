@@ -21,12 +21,10 @@
 <body>
 
 <jsp:include page="/include.jsp" flush="true" />
-	<br>
-	<br>
+
 	<h1>CYCLEの紹介</h1>
 	<br>
 	<br>
-	<br>
-	<br>
+
 </body>
 </html>

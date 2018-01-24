@@ -1,0 +1,52 @@
+package cycle.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserInfoEditConfirmAction extends ActionSupport {
+
+	private String loginAddress;
+
+	private String loginPassword;
+
+	private String errorMassage;
+
+	public String execute() {
+
+		String result = SUCCESS;
+
+		/* denderはラジオボタンでどちら必ず選ぶので空欄になることはないので書かない */
+		if (loginAddress.equals("") || (loginPassword.equals("")) {
+
+		} else {
+
+			setErrorMassage("未入力の項目があります。");
+			result = ERROR;
+		}
+
+		return result;
+	}
+
+	public String getLoginAddress() {
+		return loginAddress;
+	}
+
+	public void setLoginAddress(String loginAddress) {
+		this.loginAddress = loginAddress;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getErrorMassage() {
+		return errorMassage;
+	}
+
+	public void setErrorMassage(String errorMassage) {
+		this.errorMassage = errorMassage;
+	}
+}

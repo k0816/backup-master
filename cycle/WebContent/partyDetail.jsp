@@ -21,13 +21,13 @@ function MoveCheck() {
 </head>
 <body>
 <jsp:include page="/include.jsp" flush="true" />
-<br><br>
 
 <s:property value="partyId" />
 
 <br>
 <a href='<s:url action="PartyJoinCompleteAction"><s:param name="userId" value="%{userId}"/>
          <s:param name="partyId" value="%{partyId}"/></s:url>'>
+         <!-- 購入済みの場合、参加済みです。と表示したい。-->
             <input type="submit" value="参加する" />
 </a>
 

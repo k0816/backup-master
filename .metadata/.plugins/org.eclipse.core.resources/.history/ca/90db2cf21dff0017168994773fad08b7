@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登録情報</title>
+</head>
+<body>
+	<jsp:include page="/include.jsp" flush="true" />
+
+	<h3>登録情報確認</h3>
+
+
+	アドレス：<s:property value="#session.loginUser.getLoginAddress()" />
+	<br>
+	パスワード：<s:property value="#session.loginUser.getLoginPassword()" />
+	<br>
+	氏名：<s:property value="#session.loginUser.getUserName()" />　※変更不可
+	<br>
+	性別：<s:property value="#session.loginUser.getGender()" />　※変更不可
+	<br>
+	生年月日：<s:date name="#session.loginUser.getBirthday()" format="yyyy年MM月dd日" />　※変更不可
+	<form action="UserInfoEditAction">
+		<input type="submit" value="編集する" />
+	</form>
+
+
+</body>
+</html>

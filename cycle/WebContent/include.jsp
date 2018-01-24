@@ -18,33 +18,28 @@
 	height: 80px;
 	background-color: white;
 	border-bottom: 3px solid black;
-	position: fixed;
+	/* position: fixed; */
 }
 
 #welcome {
 	position: absolute;
-	left: 200px;
-	top: 20px;
+	left: 160px;
+	top: 0px;
 }
 
 .botan {
 	position: absolute;
-	top: 50px;
+	top: 55px;
 }
 
 #home {
 	position: absolute;
-	left: 200px;
-}
-
-#new {
-	position: absolute;
-	left: 280px;
+	left: 350px;
 }
 
 #search {
 	position: absolute;
-	left: 400px;
+	left: 420px;
 }
 
 #createORmypage {
@@ -156,21 +151,27 @@ body {
 </head>
 <body>
 	<div id="header">
-		<img src="image\logotest.jpg" width="150" height="80">
-		<div id="welcome">
+          <a href="GoHomeAction"><img src="image\logotest.jpg" width="150" height="80"></a>
+
+		<div id="welcome">  <!-- ログイン情報入力フォーム-->
 			<s:if test="#session.loginUser != null">
 ようこそ！<s:property value="#session.loginUser.getUserName()" escape="false" />様！
-</s:if>
-		</div>
+            </s:if>
+            <s:else>
+            <s:form id="form" name="form" action="LoginAction">
+				<div id="address"><s:textfield name="loginAddress"/></div>
+				<div id="password"><s:password name="loginPassword"/></div>
+				<s:hidden name="userName" value='<s:property value="userName"/>'/>
+				<s:hidden name="userId" value='<s:propety value="userId"/>'/>
+				<div id="login"><s:submit value="ログイン"/></div>
+			</s:form>
+            </s:else>
+            </div>
+
 	<div class="botan">
 			<div id="home">
 				<form action="GoHomeAction">
 					<input type="submit" value="ホーム" />
-				</form>
-			</div>
-			<div id="new">
-				<form action="ToNewUserAction">
-					<input type="submit" value="初めての方へ" />
 				</form>
 			</div>
 			<div id="search">
@@ -179,13 +180,19 @@ body {
 				</form>
 			</div>
 			<div id=createORmypage>
+			<s:hidden name="loginAddress" value="%{loginAddress}"/>
+			<s:hidden name="loginPassword" value="%{loginPassword}"/>
+			<s:hidden name="userId" value="%{userId}"/>
+			<s:hidden name="userName" value="%{userName}"/>
 			<s:if test="#session.loginUser !=null">
 				<ul id="dropmenu">
 					<li><a href="#">マイページ</a>
 						<ul>
-							<li><a href="FavoriteListAction">お気に入り</a></li>
+							<li><a href="NicePartyListAction">いいね！</a></li>
 							<li><a href="PartyJoinHistoryAction">参加履歴</a></li>
-							<li><a href="YourInfoAction">登録情報確認</a></li>
+							<li><a href="UserInfoAction">登録情報確認</a></li>
+							<li><a href="PartySearchNEWAction">商品検索</a></li>
+
 						</ul>
 					</li>
 				</ul>
@@ -203,6 +210,7 @@ body {
 			<li><a href="#">その他</a>
 				<ul>
 					<li><a href="ToNewUserAction">お知らせ</a></li>
+					<li><a href="ToNewUserAction">初めての方へ</a></li>
 					<li><a href="#">会社概要</a></li>
 					<li><a href="#">お問い合わせ</a></li>
 					<li><s:if test="#session.loginUser !=null">
@@ -214,9 +222,6 @@ body {
 		</div>
 	</div>
 	</div>
-	<br>
-	<br>
-	<br>
 	<br>
 </body>
 </html>

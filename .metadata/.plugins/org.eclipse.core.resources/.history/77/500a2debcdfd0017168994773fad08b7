@@ -1,0 +1,15 @@
+package cycle.action;
+
+import cycle.dao.UserInfoEditDAO;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class  UserInfoAction extends ActionSupport  {
+
+	public String execute()  {
+
+		return SUCCESS;
+
+
+	}
+

@@ -1,0 +1,34 @@
+package cycle.action;
+
+import java.util.ArrayList;
+
+import cycle.dao.PartySearchResultDAO;
+import cycle.dto.PartySearchDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public String partyCapacity;
+public String partyPrice;
+public String partyPlace;
+
+
+public class PartySearchResultAction extends ActionSupport {
+
+	private ArrayList<PartySearchDTO> partySearchDTOList = new ArrayList<PartySearchDTO>();
+
+	public String execute() {
+		PartySearchResultDAO dao = new PartySearchResultDAO();
+		partySearchDTOList = dao.search(partyCapacity,partyPrice,partyPlace);
+		String result = SUCCESS;
+
+		return result;
+	}
+
+	public ArrayList<PartySearchDTO> getPartySearchDTOList() {
+		return partySearchDTOList;
+	}
+
+	public void setPartySearchDTOList(ArrayList<PartySearchDTO> partySearchDTOList) {
+		this.partySearchDTOList = partySearchDTOList;
+	}
+
+}

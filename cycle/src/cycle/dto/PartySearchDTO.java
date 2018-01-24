@@ -28,6 +28,10 @@ public class PartySearchDTO {
 
 	public Date updateDate;
 
+	public String capa2;
+
+	public String price2;
+
 
 
 	public Date getInsertDate() {
@@ -116,6 +120,24 @@ public class PartySearchDTO {
 
 	public void setPartyDetail(String partyDetail) {
 	    this.partyDetail = partyDetail;
+	}
+
+
+
+	public String getCapa2() {
+		return capa2;
+	}
+
+	public void setCapa2(String capa2) {
+		this.capa2 = capa2;
+	}
+
+	public String getPrice2() {
+		return price2;
+	}
+
+	public void setPrice2(String price2) {
+		this.price2 = price2;
 	}
 
 }

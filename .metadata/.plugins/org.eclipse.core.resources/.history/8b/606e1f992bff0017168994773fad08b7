@@ -1,0 +1,48 @@
+package cycle.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import cycle.dto.LoginDTO;
+import cycle.util.DBConnector;
+
+public class UserInfoEditCompleteDAO {
+	  DBConnector db= new DBConnector();
+	  Connection con = db.getConnection();
+	  LoginDTO loginDTO = new LoginDTO();
+
+	  public void editUser(String loginAddress, String loginPassword, String userId)throws SQLException{
+
+      /* 登録情報変更 */
+	  String sql = " update user_info set login_address =?, login_pass =? where user_id=? ";
+
+	  try{
+		  PreparedStatement ps =con.prepareStatement(sql);
+		  ps.setString(1, loginAddress);
+		  ps.setString(2, loginPassword);
+		  ps.setString(3, userId);
+		  ResultSet rs=ps.executeUpdate();
+
+
+			if(rs.next()){
+			loginDTO.setUserId(rs.getString("user_id"));
+			loginDTO.setLoginAddress(rs.getString("login_address"));
+			loginDTO.setLoginPassword(rs.getString("login_pass"));
+			loginDTO.setUserName(rs.getString("user_name"));
+			loginDTO.setGender(rs.getString("gender"));
+			loginDTO.setBirthday(rs.getDate("birthday"));
+
+			}
+
+	  } catch(SQLException e){
+		  e.printStackTrace();
+	  }  finally{
+
+		  con.close();
+	  }
+
+}
+
+}

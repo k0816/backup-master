@@ -1,0 +1,65 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.UserInfoEditCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class UserInfoEditCompleteAction extends ActionSupport implements SessionAware{
+
+	String loginAddress;
+
+	String loginPassword;
+
+	String userId;
+
+	public Map<String, Object> session;
+
+	private UserInfoEditCompleteDAO userInfoEditCompleteDAO = new UserInfoEditCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		userInfoEditCompleteDAO.editUser(
+				loginAddress,
+				loginPassword,
+				session.get("userId").toString());
+
+		String result = SUCCESS;
+
+		return result;
+	}
+
+	public String getLoginAddress() {
+	    return loginAddress;
+	}
+
+	public void setLoginAddress(String loginAddress) {
+	    this.loginAddress = loginAddress;
+	}
+
+	public String getLoginPassword() {
+	    return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+	    this.loginPassword = loginPassword;
+	}
+
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+}

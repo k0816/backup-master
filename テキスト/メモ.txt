@@ -13,3 +13,8 @@ select * from party_info;
 </s:if>
 
 onclick="MoveCheck(logout);"
+
+
+<s :property value="#session.[キー名].[フィールド名]"></s>
+
+ update user_info set login_address = "y", login_pass ="y", user_name="yamada", gender=2, birthday=20000618 where user_id= 4;

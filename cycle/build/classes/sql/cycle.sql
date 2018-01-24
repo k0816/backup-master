@@ -32,8 +32,16 @@ insert_date datetime,
 update_date datetime
 );
 
-drop table if exists party_join_history;
+drop table if exists nice_party_list;
+create table nice_party_list(
+nice_party_id int not null primary key auto_increment,
+user_id int,
+party_id int,
+insert_date datetime,
+update_date datetime
+);
 
+drop table if exists party_join_history;
 create table party_join_history(
 history_id int not null primary key auto_increment,
 user_id int,
@@ -43,6 +51,4 @@ update_date datetime
 );
 
 INSERT INTO user_info(login_address, login_pass, user_name, gender, birthday)
-VALUES("aug", "koni", "konishi", 1, 19910816);
-INSERT INTO party_join_history(user_id, party_id)
-VALUES("1", "1");
+VALUES("koni", "koni", "konishi", 1, 19910816);

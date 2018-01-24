@@ -26,9 +26,7 @@ public class UserCreateCompleteDAO {
 			preparedStatement.setString(3, userName);
 			preparedStatement.setString(4, gender);
 			preparedStatement.setString(5, birthday);
-
 			preparedStatement.setString(6, dateUtil.getDate());
-
 			preparedStatement.execute();
 
 		} catch (Exception e) {

@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<jsp:include page="/include.jsp" flush="true" />
+
+<h3>送信する内容は以下でよろしいですか。</h3>
+		<div>
+			<s:if test="errorMassage != ''">
+				<s:property value="errorMassage" escape="false" />
+			</s:if>
+			<table>
+				<s:form action="UserCreateConfirmAction">
+					<tr>
+						<td><label>メールアドレス:</label></td>
+						<td><input type="text" name="loginAddress" value="<?#session.loginUser.getLoginAddress()?>" /></td>
+					</tr>
+					<tr>
+						<td><label>パスワード:</label></td>
+						<td><input type="text" name="loginPassword" value="" /></td>
+					</tr>
+					<tr>
+						<td><label>氏名:</label></td>
+						<td><input type="text" name="userName" value="" /></td>
+					</tr>
+					<tr>
+						<td><label>性別:</label></td>
+						<td><label><input type="radio" name="gender" value="1" checked >男性</label>
+						<label><input type="radio" name="gender" value="2" >女性</label></td>
+					</tr>
+					<tr>
+						<td><label>生年月日:</label></td>
+						<td><input type="text" name="birthday" value="" /></td>
+					</tr>
+					<s:submit value="登録" />
+				</s:form>
+			</table>
+		</div>
+
+
+
+
+</body>
+</html>

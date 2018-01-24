@@ -38,12 +38,6 @@
 		   border:1px solid #333;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
-
 		#main {
 		   width: 100%;
 		   height: 500px;
@@ -63,10 +57,8 @@
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+<jsp:include page="/include.jsp" flush="true" />
+
 	<div id="main">
 		<div id="top">
 			<p>登録情報確認</p>
@@ -80,7 +72,7 @@
 							<label>ログインアドレス:</label>
 						</td>
 						<td>
-							<s:property value="loginPassword" escape="false" />
+							<s:property value="loginAddress" escape="false" />
 						</td>
 					</tr>
 					<tr id="box">

@@ -1,0 +1,34 @@
+use cycle;
+
+drop table if exists party_info;
+
+create table party_info(
+party_id int not null primary key auto_increment,
+party_name nvarchar(50),
+party_date date,
+party_price int,
+party_capacity int,
+party_place nvarchar(100),
+age_minimum int,
+age_maximum int,
+party_detail nvarchar(500),
+insert_date datetime,
+update_date datetime
+);
+
+INSERT INTO party_info(party_name, party_date, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail) VALUES
+("4月A", 20180401, 5000, 40, "新宿", 20, 40, "コメント"),
+("7月B", 20180701, 3000, 90, "新宿", 20, 40, "コメント"),
+("12月C", 20181228, 8000, 30, "新宿", 25, 40, "コメント"),
+("12月D", 20181224, 6000, 80, "池袋", 20, 40, "コメント"),
+("4月E", 20180401, 3000, 30, "池袋", 20, 40, "コメント"),
+("7月F", 20180701, 5000, 70, "上野", 20, 35, "コメント"),
+("7月G", 20180701, 1500, 50, "六本木", 18, 25, "コメント"),
+("8月H", 20180801, 4000, 15, "渋谷", 25, 40, "コメント"),
+("7月I", 20180701, 5500, 30, "渋谷", 25, 35, "コメント"),
+("9月J", 20180901, 2000, 20, "品川", 20, 30, "コメント"),
+("10月K",20181001, 6000, 40, "六本木", 25, 40, "コメント"),
+("2月L", 20180201, 3000, 65, "六本木", 20, 40, "コメント");
+("2月L", 20180201, 4000, 55, "六本木", 20, 40, "コメント");
+("2月L", 20180201, 4000, 25, "池袋", 20, 40, "コメント");
+("2月L", 20180201, 6000, 65, "品川", 20, 40, "コメント");

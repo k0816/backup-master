@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<jsp:include page="/include.jsp" flush="true" />
+
+<s:form id="form" name="form" action="PartySearchResultAction">
+<select name="partyPrice1">
+    <option value="1000">1000</option>
+    <option value="2000">2000</option>
+    <option value="3000">3000</option>
+    <option value="4000">4000</option>
+    <option value="5000">5000</option>
+    <option value="6000">6000</option>
+    <option value="7000">7000</option>
+  </select>　～
+  <select name="partyPrice2">
+    <option value="1">10000</option>
+    <option value="2">9000</option>
+    <option value="2">8000</option>
+    <option value="2">7000</option>
+    <option value="2">6000</option>
+    <option value="2">5000</option>
+    <option value="2">4000</option>
+  </select>
+<div id="searchBotan"><s:submit value="検索"/></div>
+</s:form>
+
+
+
+</body>
+</html>

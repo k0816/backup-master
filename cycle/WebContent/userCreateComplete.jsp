@@ -39,12 +39,6 @@
 		   border:1px solid #333;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
-
 		#main {
 		   width: 100%;
 		   height: 500px;
@@ -60,10 +54,8 @@
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+	<jsp:include page="/include.jsp" flush="true" />
+
 	<div id="main">
 		<div id="top">
 			<p>会員登録完了</p>
@@ -71,9 +63,6 @@
 		<div><br>
 			<h3>ユーザーの登録が完了致しました。</h3>
 
-			<div>
-				<a href='<s:url action="GoHomeAction" />'>ホームへ</a>
-			</div>
 		</div>
 	</div>
 	<div id="footer">

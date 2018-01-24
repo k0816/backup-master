@@ -1,20 +1,22 @@
 package cycle.dto;
 
+import java.util.Date;
+
 public class LoginDTO {
 
-	private String userId;
+	String userId;
 
-	private String loginAddress;
+	String loginAddress;
 
-	private String loginPassword;
+	String loginPassword;
 
-	private String userName;
+	String userName;
 
-    private String gender;
+    String gender;
 
-	private String birthday;
+	Date birthday;
 
-	private boolean loginFlg = false;
+    boolean loginFlg = false;
 
 	public String getUserId() {
 		return userId;
@@ -56,11 +58,11 @@ public class LoginDTO {
 	    this.gender = gender;
 	}
 
-	public String getBirthday() {
+	public Date getBirthday() {
 	    return birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 	    this.birthday = birthday;
 	}
 

@@ -1,0 +1,93 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import cycle.dao.NicePartyDAO;
+import cycle.dto.LoginDTO;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class NicePartyAction extends ActionSupport implements SessionAware {
+
+	String userId;
+    String partyId;
+	String message;
+ 	String errorMessage;
+	public Map<String, Object> session;
+	NicePartyDAO dao = new NicePartyDAO();
+
+
+	public String execute() throws SQLException {
+		String result = SUCCESS;
+		LoginDTO loginDTO = (LoginDTO)session.get("loginUser");
+		String userId = loginDTO.getUserId();
+		dao.niceParty(userId,partyId);
+
+		return result;
+	}
+
+
+
+	public String delete() throws SQLException {
+
+
+
+		String result = SUCCESS;
+
+		int count = dao.deleteNiceParty(userId, partyId);
+		if(count > 0){
+			message="いいね！リストから削除しました。";
+			result= SUCCESS;
+		}else {
+			errorMessage="削除に失敗しました。";
+			result= ERROR;
+		}
+		return result;
+}
+	public String getPartyId() {
+		return partyId;
+	}
+
+
+	public void setPartyId(String partyId) {
+		this.partyId = partyId;
+	}
+
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+}

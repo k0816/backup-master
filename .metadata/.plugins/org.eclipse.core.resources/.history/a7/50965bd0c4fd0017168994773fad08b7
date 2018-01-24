@@ -1,0 +1,183 @@
+package cycle.action;
+
+import cycle.dao.UserInfoDAO;
+import cycle.dto.LoginDTO;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import java.util.Date;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class  UserInfoAction extends ActionSupport implements SessionAware {
+
+	public Map<String,Object>session;
+
+	public UserInfoDAO userInfoDAO = new UserInfoDAO();
+
+	public LoginDTO loginDTO = new LoginDTO();
+
+	String userId;
+
+	String loginAddress;
+
+	String loginPassword;
+
+	String userName;
+
+    String gender;
+
+	Date birthday;
+
+
+	public String execute()  {
+
+
+		loginDTO = userInfoDAO.UserInfo(session.get("userId").toString());
+
+		session.put("userInfo", loginDTO);
+
+		String result = SUCCESS;
+
+		return result;
+
+
+	}
+
+
+	/**
+	 * userInfoDAOを取得します。
+	 * @return userInfoDAO
+	 */
+	public UserInfoDAO getUserInfoDAO() {
+		return userInfoDAO;
+	}
+
+
+	/**
+	 * userInfoDAOを設定します。
+	 * @param userInfoDAO userInfoDAO
+	 */
+	public void setUserInfoDAO(UserInfoDAO userInfoDAO) {
+		this.userInfoDAO = userInfoDAO;
+	}
+
+
+	/**
+	 * userIdを取得します。
+	 * @return userId
+	 */
+	public String getUserId() {
+		return userId;
+	}
+
+
+	/**
+	 * userIdを設定します。
+	 * @param userId userId
+	 */
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+
+	/**
+	 * loginAddressを取得します。
+	 * @return loginAddress
+	 */
+	public String getLoginAddress() {
+		return loginAddress;
+	}
+
+
+	/**
+	 * loginAddressを設定します。
+	 * @param loginAddress loginAddress
+	 */
+	public void setLoginAddress(String loginAddress) {
+		this.loginAddress = loginAddress;
+	}
+
+
+	/**
+	 * loginPasswordを取得します。
+	 * @return loginPassword
+	 */
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+
+	/**
+	 * loginPasswordを設定します。
+	 * @param loginPassword loginPassword
+	 */
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+
+	/**
+	 * userNameを取得します。
+	 * @return userName
+	 */
+	public String getUserName() {
+		return userName;
+	}
+
+
+	/**
+	 * userNameを設定します。
+	 * @param userName userName
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	/**
+	 * genderを取得します。
+	 * @return gender
+	 */
+	public String getGender() {
+		return gender;
+	}
+
+
+	/**
+	 * genderを設定します。
+	 * @param gender gender
+	 */
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+	/**
+	 * birthdayを取得します。
+	 * @return birthday
+	 */
+	public Date getBirthday() {
+		return birthday;
+	}
+
+
+	/**
+	 * birthdayを設定します。
+	 * @param birthday birthday
+	 */
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+
+	/**
+	 * sessionを設定します。
+	 * @param session session
+	 */
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+}
