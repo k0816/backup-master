@@ -1,7 +1,7 @@
 package cycle.action;
 
 import java.util.Map;
-
+import java.util.Date;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,9 +15,12 @@ public class  UserInfoAction extends ActionSupport implements SessionAware {
 	private String userId;
 	private String userName;
 	private String gender;
-	private String birthday;
+	public  Date birthday;
+	private String age;
+
 	private Map<String,Object> session;
 	public String execute()  {
+
 
 		LoginDTO loginUser = new LoginDTO();
 		loginUser=(LoginDTO)session.get("loginUser");
@@ -26,7 +29,9 @@ public class  UserInfoAction extends ActionSupport implements SessionAware {
 		userId=loginUser.getUserId();
 		userName=loginUser.getUserName();
 		gender=loginUser.getGender();
-		birthday=loginUser.getBirthday().toString();
+		birthday=loginUser.getBirthday();
+		age=loginUser.getAge();
+
 		System.out.println(loginAddress);
 		System.out.println(loginPassword);
 		System.out.println(userId);
@@ -35,6 +40,7 @@ public class  UserInfoAction extends ActionSupport implements SessionAware {
 		System.out.println(birthday);
 		return SUCCESS;
 	}
+
 	public String getLoginAddress() {
 		return loginAddress;
 	}
@@ -66,12 +72,20 @@ public class  UserInfoAction extends ActionSupport implements SessionAware {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session=session;

@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<div class="partyId;">
+		        パーティーID：<s:property value="partyId" />
+		    </div>
+			<div class="partyName">
+				名称：<s:property value="partyName" />
+			</div>
+			<div class="partyDate">
+				開催日：<s:date name="partyDate" format="yyyy年MM月dd日" />
+				<s:if test="partyWeek==1">(日)</s:if>
+				<s:if test="partyWeek==2">(月)</s:if>
+				<s:if test="partyWeek==3">(火)</s:if>
+				<s:if test="partyWeek==4">(水)</s:if>
+				<s:if test="partyWeek==5">(木)</s:if>
+				<s:if test="partyWeek==6">(金)</s:if>
+				<s:if test="partyWeek==7">(土)</s:if>
+			</div>
+			<div class="partyPlace">
+			    開催地：<s:property value="partyPlace" />
+			</div>
+			<div class="partyPrice">
+				参加費：<s:property value="partyPrice" />円
+			</div>
+			<div class="partyCapacity">
+				参加人数：<s:property value="partyCapacity" />人
+			</div>
+			<div class="age">
+			年齢制限：<s:property value="ageMinimum" />歳 ～ <s:property value="ageMaximum" /> 歳
+			</div>
+
+
+
+</body>
+</html>

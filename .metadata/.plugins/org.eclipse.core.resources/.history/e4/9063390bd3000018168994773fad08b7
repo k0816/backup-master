@@ -1,0 +1,83 @@
+package cycle.action;
+
+import java.util.ArrayList;
+
+import cycle.dao.PartySearchResultDAO;
+import cycle.dto.PartySearchDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+
+public class PartySearchResultAction extends ActionSupport {
+
+	public String partyCapacity;
+	public String partyPrice;
+	public String partyPlace;
+	public String capa2;
+	public String price2;
+
+
+	private ArrayList<PartySearchDTO> listDTO = new ArrayList<PartySearchDTO>();
+
+	public String execute() {
+
+
+		PartySearchResultDAO dao = new PartySearchResultDAO();
+		listDTO = dao.search(partyCapacity,capa2,partyPrice,price2,partyPlace);
+		String[] places = this.createPlaces(partyPlace);
+		String result = SUCCESS;
+
+		System.out.println(places[0]);
+	    System.out.println(places[1]);
+
+		return result;
+	}
+
+	public String getPartyCapacity() {
+		return partyCapacity;
+	}
+
+	public void setPartyCapacity(String partyCapacity) {
+		this.partyCapacity = partyCapacity;
+	}
+
+	public String getPartyPrice() {
+		return partyPrice;
+	}
+
+	public void setPartyPrice(String partyPrice) {
+		this.partyPrice = partyPrice;
+	}
+
+	public String getPartyPlace() {
+		return partyPlace;
+	}
+
+	public void setPartyPlace(String partyPlace) {
+		this.partyPlace = partyPlace;
+	}
+
+	public String getCapa2() {
+		return capa2;
+	}
+
+	public void setCapa2(String capa2) {
+		this.capa2 = capa2;
+	}
+
+	public String getPrice2() {
+		return price2;
+	}
+
+	public void setPrice2(String price2) {
+		this.price2 = price2;
+	}
+
+	public ArrayList<PartySearchDTO> getListDTO() {
+		return listDTO;
+	}
+
+	public void setListDTO(ArrayList<PartySearchDTO> listDTO) {
+		this.listDTO = listDTO;
+	}
+
+}

@@ -1,0 +1,145 @@
+package cycle.action;
+
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.Map;
+import org.apache.struts2.interceptor.SessionAware;
+import com.opensymphony.xwork2.ActionSupport;
+
+import cycle.dao.PartyEditCompleteDAO;
+
+public class PartyEditCompleteAction extends ActionSupport implements SessionAware{
+
+
+	public String partyName;
+	public Date partyDate;
+	public String partyCapacity;
+	public String partyPrice;
+	public String partyPlace;
+	public String ageMinimum;
+	public String ageMaximum;
+	public String partyDetail;
+	private String updatedDate;
+	private String message;
+	private String errorMessage;
+
+	public Map<String, Object> session;
+
+	public String execute() throws SQLException {
+
+		String result = ERROR;
+
+		PartyEditDAO dao = new PartyEditDAO();
+
+
+		int count=dao.editparty(partyName,partyDate,partyCapacity,partyPrice,partyPlace,
+				ageMinimum,ageMaximum,partyDetail);
+		if(count>0){
+			message="パーティー情報を変更いたしました。";
+			result= SUCCESS;
+		}else{
+			errorMessage="パーティー情報は正しく更新されませんでした。";
+			result= ERROR;
+		}
+
+		return result;
+	}
+
+
+	public String getPartyName() {
+		return partyName;
+	}
+
+	public void setPartyName(String partyName) {
+		this.partyName = partyName;
+	}
+
+	public Date getPartyDate() {
+		return partyDate;
+	}
+
+	public void setPartyDate(Date partyDate) {
+		this.partyDate = partyDate;
+	}
+
+	public String getPartyCapacity() {
+		return partyCapacity;
+	}
+
+	public void setPartyCapacity(String partyCapacity) {
+		this.partyCapacity = partyCapacity;
+	}
+
+	public String getPartyPrice() {
+		return partyPrice;
+	}
+
+	public void setPartyPrice(String partyPrice) {
+		this.partyPrice = partyPrice;
+	}
+
+	public String getPartyPlace() {
+		return partyPlace;
+	}
+
+	public void setPartyPlace(String partyPlace) {
+		this.partyPlace = partyPlace;
+	}
+
+	public String getAgeMinimum() {
+		return ageMinimum;
+	}
+
+	public void setAgeMinimum(String ageMinimum) {
+		this.ageMinimum = ageMinimum;
+	}
+
+	public String getAgeMaximum() {
+		return ageMaximum;
+	}
+
+	public void setAgeMaximum(String ageMaximum) {
+		this.ageMaximum = ageMaximum;
+	}
+
+	public String getPartyDetail() {
+		return partyDetail;
+	}
+
+	public void setPartyDetail(String partyDetail) {
+		this.partyDetail = partyDetail;
+	}
+
+	public String getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(String updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public void setSession(Map<String,Object> session) {
+	    this.session = session;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+}

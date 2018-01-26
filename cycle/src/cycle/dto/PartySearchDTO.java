@@ -12,6 +12,10 @@ public class PartySearchDTO {
 
 	public Date partyDate;
 
+	public Date date2;
+
+	public String partyWeek;
+
 	public String partyPrice;
 
 	public String partyCapacity;
@@ -72,6 +76,22 @@ public class PartySearchDTO {
 
 	public void setPartyDate(Date partyDate) {
 	    this.partyDate = partyDate;
+	}
+
+	public Date getDate2() {
+		return date2;
+	}
+
+	public void setDate2(Date date2) {
+		this.date2 = date2;
+	}
+
+	public String getPartyWeek() {
+		return partyWeek;
+	}
+
+	public void setPartyWeek(String partyWeek) {
+		this.partyWeek = partyWeek;
 	}
 
 	public String getPartyPrice() {

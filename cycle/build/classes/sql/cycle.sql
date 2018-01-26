@@ -12,6 +12,7 @@ login_pass varchar(16),
 user_name varchar(50),
 gender smallint,
 birthday date,
+age int,
 insert_date datetime,
 updated_date datetime
 );
@@ -22,6 +23,7 @@ create table party_info(
 party_id int not null primary key auto_increment,
 party_name nvarchar(50),
 party_date date,
+party_week int,
 party_price int,
 party_capacity int,
 party_place nvarchar(100),
@@ -50,5 +52,5 @@ insert_date datetime,
 update_date datetime
 );
 
-INSERT INTO user_info(login_address, login_pass, user_name, gender, birthday)
-VALUES("koni", "koni", "konishi", 1, 19910816);
+INSERT INTO user_info(login_address, login_pass, user_name, gender, birthday)VALUES
+("koni", "koni", "konishi", 1, 19910816);

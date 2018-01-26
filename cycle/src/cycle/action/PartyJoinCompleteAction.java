@@ -14,6 +14,7 @@ public class PartyJoinCompleteAction extends ActionSupport implements SessionAwa
 
 	public Map<String, Object> session;
 	public String partyId;
+	public String message;
 
 	public String execute() throws SQLException {
 		String result = SUCCESS;
@@ -21,6 +22,8 @@ public class PartyJoinCompleteAction extends ActionSupport implements SessionAwa
 		LoginDTO loginDTO = (LoginDTO)session.get("loginUser");
 		String userId = loginDTO.getUserId();
 		partyJoinCompleteDAO.joinParty(userId,partyId);
+
+		message="参加登録が完了いたしました。";
 
 		return result;
 	}

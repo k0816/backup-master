@@ -32,6 +32,7 @@ public class LoginDAO {
 				loginDTO.setUserName(rs.getString("user_name"));
 				loginDTO.setGender(rs.getString("gender"));
 				loginDTO.setBirthday(rs.getDate("birthday"));
+				loginDTO.setAge(rs.getString("age"));
 
 				if(!(rs.getString("login_address").equals(null))) {
 					loginDTO.setLoginFlg(true);

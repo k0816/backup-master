@@ -15,7 +15,13 @@ public class UserCreateCompleteDAO {
 
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO user_info (login_address, login_pass, user_name, gender, birthday, insert_date) VALUES(?, ?, ?, ?, ?, ?)";
+	private String sql = "INSERT INTO user_info (login_address, login_pass, user_name, gender, birthday, age, insert_date) "
+			+ "VALUES(?, ?, ?, ?, ?, TIMESTAMPDIFF(YEAR, birthday, CURDATE()), ?)";
+
+//			             "INSERT INTO user_info (login_address, login_pass, user_name, gender, birthday, insert_date) "
+//			+ "VALUES(?, ?, ?, ?, ?, ?)";
+
+
 
 	public void createUser(String loginAddress, String loginPassword, String userName, String gender, String birthday ) throws SQLException {
 

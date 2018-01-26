@@ -1,0 +1,4 @@
+use cycle;
+
+INSERT INTO party_info(party_name, party_date, party_week, party_price, party_capacity, party_place, age_minimum, age_maximum, party_detail) VALUES
+("12月A", 20180401, DAYOFWEEK('20180401'), 5000, 70, "東京都新宿", 20, 40, "コメント");

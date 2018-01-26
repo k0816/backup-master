@@ -1,0 +1,21 @@
+package cycle.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+import cycle.util.DateUtil;
+
+public class PartySearchNEWAction extends ActionSupport{
+
+
+	 Date date = new Date();
+	 int year = date.getYear() + 1900;     // 0 = 1900 年
+	 int month = date.getMonth() + 1;      // 0 = 1 月
+	 int day = date.getDate();
+
+	 String registDay = year + "/" + month + "/" + day;
+
+
+	public String execute() {
+		return SUCCESS;
+	}
+}
+

@@ -6,26 +6,96 @@ import cycle.dao.PartySearchResultDAO;
 import cycle.dto.PartySearchDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-
 public class PartySearchResultAction extends ActionSupport {
 
+	public String partyDate;
+	public String date2;
+	public String partyWeek;
 	public String partyCapacity;
 	public String partyPrice;
 	public String partyPlace;
 	public String capa2;
 	public String price2;
+	public String ageMinimum;
+	public String ageMaximum;
+	private String errorMessage;
+
 
 	private ArrayList<PartySearchDTO> listDTO = new ArrayList<PartySearchDTO>();
 
 	public String execute() {
+		System.out.println("PartySearchResultAction-------");
+		System.out.println(partyWeek);
+		System.out.println(partyPlace);
+		System.out.println(partyDate);
+		System.out.println(date2);
+		System.out.println(partyCapacity);
+		System.out.println(capa2);
+
+		System.out.println("-----------------------------");
+
+		if(partyPlace==null){
+			errorMessage="チェックボックスの選択がされていません。";
+			return ERROR;
+		}
+
+		String[] partyPlaceList = partyPlace.split(", ", 0);
+		for(int i=0; i<partyPlaceList.length;i++){
+			System.out.println(partyPlaceList[i].toString());
+		}
+
+		String[] partyWeekList = partyWeek.split(", ", 0);
+		for(int n=0; n<partyWeekList.length;n++){
+			System.out.println(partyWeekList[n].toString());
+		}
+
 		PartySearchResultDAO dao = new PartySearchResultDAO();
-		listDTO = dao.search(partyCapacity,capa2,partyPrice,price2,partyPlace);
+//		listDTO = dao.search(partyCapacity,capa2,partyPrice,price2,ageMinimum,ageMaximum,partyPlace);
+		listDTO = dao.search(partyDate,date2,partyCapacity,capa2,partyPrice,price2,ageMinimum,ageMaximum,partyPlaceList,partyWeekList);
+//		for(PartySearchDTO partySearchDTO: listDTO){
+//
+////		System.out.println(partySearchDTO.getPartyId());
+////		System.out.println(partySearchDTO.getPartyName());
+////		System.out.println(partySearchDTO.getPartyDate());
+////		System.out.println(partySearchDTO.getPartyPrice());
+////		System.out.println(partySearchDTO.getPartyCapacity());
+////		System.out.println(partySearchDTO.getPartyPlace());
+////		System.out.println(partySearchDTO.getAgeMinimum());
+////		System.out.println(partySearchDTO.getAgeMaximum());
+////		System.out.println(partySearchDTO.getPartyDetail());
+////		System.out.println(partySearchDTO.getInsertDate());
+////		System.out.println(partySearchDTO.getUpdateDate());
+//
+//		}
+
 		String result = SUCCESS;
 
 		return result;
 	}
 
+	public String getPartyDate() {
+		return partyDate;
+	}
 
+	public void setPartyDate(String partyDate) {
+		this.partyDate = partyDate;
+	}
+
+	public String getPartyWeek() {
+		return partyWeek;
+	}
+
+	public String getDate2() {
+		return date2;
+	}
+
+	public void setDate2(String date2) {
+		this.date2 = date2;
+	}
+
+	public void setPartyWeek(String partyWeek) {
+		this.partyWeek = partyWeek;
+	}
 
 	public String getPartyCapacity() {
 		return partyCapacity;
@@ -67,6 +137,22 @@ public class PartySearchResultAction extends ActionSupport {
 		this.price2 = price2;
 	}
 
+	public String getAgeMinimum() {
+		return ageMinimum;
+	}
+
+	public void setAgeMinimum(String ageMinimum) {
+		this.ageMinimum = ageMinimum;
+	}
+
+	public String getAgeMaximum() {
+		return ageMaximum;
+	}
+
+	public void setAgeMaximum(String ageMaximum) {
+		this.ageMaximum = ageMaximum;
+	}
+
 	public ArrayList<PartySearchDTO> getListDTO() {
 		return listDTO;
 	}
@@ -74,5 +160,14 @@ public class PartySearchResultAction extends ActionSupport {
 	public void setListDTO(ArrayList<PartySearchDTO> listDTO) {
 		this.listDTO = listDTO;
 	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 
 }

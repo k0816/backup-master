@@ -1,5 +1,0 @@
-#Tomcat publish data
-#Wed Jan 24 10:03:54 GMT+09:00 2018
-org.eclipse.jst.jee.server\:ecsite=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\ecsite
-org.eclipse.jst.jee.server\:yataberyouhin-master=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\yataberyouhin-master
-org.eclipse.jst.jee.server\:cycle=C\:\\Downloads\\\u30D7\u30EC\u30A2\u30C7\u30B9\\pleiades\\tomcat\\8\\wtpwebapps\\cycle

@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+//import java.util.Date;
+//import java.util.Calendar;
+//import java.text.SimpleDateFormat;
 
 import cycle.dto.PartySearchDTO;
 import cycle.util.DBConnector;
@@ -12,22 +15,44 @@ import cycle.util.DBConnector;
 public class PartySearchResultDAO {
 	public ArrayList<PartySearchDTO> listDTO = new ArrayList<PartySearchDTO>();
 
-	public ArrayList<PartySearchDTO> search(String partyCapacity, String capa2, String partyPrice, String price2,
-		String partyPlace) {
+	public ArrayList<PartySearchDTO> search(String partyDate, String date2, String partyCapacity, String capa2, String partyPrice, String price2,
+			String ageMinimum, String ageMaximum, String[] partyPlaceList, String[] partyWeekList) {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
-		String sql = "SELECT * FROM party_info WHERE (party_capacity BETWEEN ? AND ? "
-				+ "AND party_price BETWEEN ? AND ? "
-				+ "AND party_place LIKE '%" + partyPlace + "%') IS NOT FALSE";
+
+		String sql = "SELECT * FROM party_info WHERE ((party_date BETWEEN ? AND ?) "
+				+ "AND (party_capacity BETWEEN ? AND ?) "
+				+ "AND (party_price BETWEEN ? AND ?) "
+			    + "AND (age_minimum >= ? AND age_maximum <= ?) ";
+
+		for(int i=0; i < partyPlaceList.length;i++){
+			if(i==0){
+				sql+= "AND (party_place LIKE '%" + partyPlaceList[i].toString() + "%' ";
+			}else if(i>0){
+				sql+= " OR party_place LIKE '%" + partyPlaceList[i].toString() + "%' ";
+			}
+		}
+		for(int n=0; n < partyWeekList.length;n++){
+			if(n==0){
+				sql+= ") AND (party_week=" + partyWeekList[n].toString()+ " ";
+			}else if(n>0){
+				sql+= " OR party_week=" + partyWeekList[n].toString()+ " ";
+			}
+		}
+		sql += " ))";
 
 	    try{
 	    	PreparedStatement ps = con.prepareStatement(sql);
-	    	ps.setString(1, partyCapacity);
-	    	ps.setString(2, capa2);
-			ps.setString(3, partyPrice);
-			ps.setString(4, price2);
-//			ps.setString(5, partyPlace);
+	    	ps.setString(1, partyDate);
+	    	ps.setString(2, date2);
+	    	ps.setString(3, partyCapacity);
+	    	ps.setString(4, capa2);
+			ps.setString(5, partyPrice);
+			ps.setString(6, price2);
+			ps.setString(7, ageMinimum);
+			ps.setString(8, ageMaximum);
+//			ps.setString( , partyPlace);
 
 			ResultSet rs = ps.executeQuery();
 
@@ -36,6 +61,7 @@ public class PartySearchResultDAO {
 				partySearchDTO.setPartyId(rs.getString("party_id"));
 				partySearchDTO.setPartyName(rs.getString("party_name"));
 				partySearchDTO.setPartyDate(rs.getDate("party_date"));
+				partySearchDTO.setPartyWeek(rs.getString("party_week"));
 				partySearchDTO.setPartyPrice(rs.getString("party_price"));
 				partySearchDTO.setPartyCapacity(rs.getString("party_capacity"));
 				partySearchDTO.setPartyPlace(rs.getString("party_place"));
@@ -47,6 +73,23 @@ public class PartySearchResultDAO {
 				listDTO.add(partySearchDTO);
 
 	    }
+			for(int i=0; i< listDTO.size();i++){
+				System.out.println("PartySearchResultDAO(listDTO["+i+"])--------");
+				System.out.println(listDTO.get(i).getPartyId());
+				System.out.println(listDTO.get(i).getPartyName());
+				System.out.println(listDTO.get(i).getPartyDate());
+				System.out.println(listDTO.get(i).getPartyWeek());
+				System.out.println(listDTO.get(i).getPartyPrice());
+				System.out.println(listDTO.get(i).getPartyCapacity());
+				System.out.println(listDTO.get(i).getPartyPlace());
+				System.out.println(listDTO.get(i).getAgeMinimum());
+				System.out.println(listDTO.get(i).getAgeMaximum());
+				System.out.println(listDTO.get(i).getPartyDetail());
+				System.out.println(listDTO.get(i).getInsertDate());
+				System.out.println(listDTO.get(i).getUpdateDate());
+				System.out.println("----------------------------");
+
+			}
 
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -62,7 +105,65 @@ public class PartySearchResultDAO {
 		}
 
 		return listDTO;
+
 	}
+
+//	public ArrayList<PartySearchDTO> search(String partyCapacity, String capa2, String partyPrice, String price2,
+//			String ageMinimum, String ageMaximum, String partyPlace) {
+//			DBConnector db = new DBConnector();
+//			Connection con = db.getConnection();
+//
+//			String sql = "SELECT * FROM party_info WHERE (party_capacity BETWEEN ? AND ? "
+//					+ "AND party_price BETWEEN ? AND ? "
+//				    + "AND age_minimum >= ? AND age_maximum <= ? "
+//					+ "AND party_place LIKE '%" + partyPlace + "%') IS NOT FALSE";
+//
+//		    try{
+//		    	PreparedStatement ps = con.prepareStatement(sql);
+//		    	ps.setString(1, partyCapacity);
+//		    	ps.setString(2, capa2);
+//				ps.setString(3, partyPrice);
+//				ps.setString(4, price2);
+//				ps.setString(5, ageMinimum);
+//				ps.setString(6, ageMaximum);
+////				ps.setString(5, partyPlace);
+//
+//				ResultSet rs = ps.executeQuery();
+//
+//				while(rs.next()) {
+//					PartySearchDTO partySearchDTO = new PartySearchDTO();
+//					partySearchDTO.setPartyId(rs.getString("party_id"));
+//					partySearchDTO.setPartyName(rs.getString("party_name"));
+//					partySearchDTO.setPartyDate(rs.getDate("party_date"));
+//					partySearchDTO.setPartyPrice(rs.getString("party_price"));
+//					partySearchDTO.setPartyCapacity(rs.getString("party_capacity"));
+//					partySearchDTO.setPartyPlace(rs.getString("party_place"));
+//					partySearchDTO.setAgeMinimum(rs.getString("age_minimum"));
+//					partySearchDTO.setAgeMaximum(rs.getString("age_maximum"));
+//					partySearchDTO.setPartyDetail(rs.getString("party_detail"));
+//					partySearchDTO.setInsertDate(rs.getDate("insert_date"));
+//					partySearchDTO.setUpdateDate(rs.getDate("update_date"));
+//					listDTO.add(partySearchDTO);
+//
+//		    }
+//
+//			} catch(SQLException e) {
+//				e.printStackTrace();
+//
+//			}
+//
+//			try {
+//				con.close();
+//
+//			} catch(SQLException e) {
+//				e.printStackTrace();
+//
+//			}
+//
+//			return listDTO;
+//		}
+//
+
 
 	public ArrayList<PartySearchDTO> getListDTO() {
 		return listDTO;
@@ -71,8 +172,4 @@ public class PartySearchResultDAO {
 	public void setListDTO(ArrayList<PartySearchDTO> listDTO) {
 		this.listDTO = listDTO;
 	}
-
-
-
-
 }

@@ -14,6 +14,7 @@ public class NicePartyAction extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> session;
 	public String partyId;
+	public  String message;
 	NicePartyDAO dao = new NicePartyDAO();
 
 
@@ -23,8 +24,11 @@ public class NicePartyAction extends ActionSupport implements SessionAware {
 		String userId = loginDTO.getUserId();
 		dao.niceParty(userId,partyId);
 
+		message="いいね！リストに加えました。";
+
 		return result;
 	}
+
 
 	public String getPartyId() {
 		return partyId;
@@ -42,4 +46,13 @@ public class NicePartyAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String,Object> session) {
 	    this.session = session;
 	}
+
+//  ゲッターセッターはいらないらしい
+//	public String getMessage() {
+//		return message;
+//	}
+//	public void setMessage(String message) {
+//		this.message = message;
+//	}
+
 }
